@@ -1,0 +1,11 @@
+certifi==2023.7.22
+charset-normalizer==3.2.0
+docutils==0.20.1
+idna==3.4
+Kivy==2.2.1
+Kivy-Garden==0.1.5
+kivymd==1.1.1
+Pillow==10.0.0
+Pygments==2.15.1
+requests==2.31.0
+urllib3==2.0.4
