@@ -1,3 +1,7 @@
+from kivy.config import Config
+# configure width and height for window
+Config.set("graphics", "width", str(300))
+
 from kivymd.tools.hotreload.app import MDApp
 from kivymd.uix.label import MDLabel
 
