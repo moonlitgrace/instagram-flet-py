@@ -7,10 +7,16 @@ def main(page: ft.Page):
     # configure custom fonts
     page.fonts = {
         "Poppins": "fonts/Poppins/Poppins-regular.ttf",
-        "Fontspring": "fonts/Fontspring/Fontspring-regular.otf",
+        "Fontspring": "fonts/Fontspring/Fontspring-bold.otf",
     }
 
-    page.add(ft.Text("Instagram", font_family="Fontspring"))
+    page.add(
+        ft.Text(
+            "Instagram",
+            font_family="Fontspring",
+            size=20,
+        )
+    )
 
 if __name__ == "__main__":
     ft.app(target=main, assets_dir="assets")
