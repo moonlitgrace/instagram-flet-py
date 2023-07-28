@@ -8,7 +8,7 @@ def main(page: ft.Page):
     page.add(
         ft.FloatingActionButton(
             icon=ft.icons.ADD_CIRCLE,
-            bgcolor=ft.colors.BLUE_500
+            bgcolor=ft.colors.BLUE,
         )
     )
 
