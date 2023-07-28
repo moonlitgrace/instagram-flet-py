@@ -1,2 +1,2 @@
 # Instagram
-An Instagram clone like app made with Kivy Python
+An Instagram clone like app made with Flet and Python
