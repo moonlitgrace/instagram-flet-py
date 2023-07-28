@@ -1,7 +1,8 @@
 import flet as ft
 
 def main(page: ft.Page):
-    # "#03020c"
+    page.bgcolor = "#03020c"
+    
     page.add(
         ft.FloatingActionButton(
             icon=ft.icons.ADD_CIRCLE,
