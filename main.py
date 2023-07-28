@@ -4,9 +4,9 @@ def main(page: ft.Page):
     page.bgcolor = "#03020c"
     page.window_width = 330
     page.window_height = 660
-
+    # configure custom fonts
     page.fonts = {
-        "Poppins": "/fonts/Poppins/Poppins-regular.ttf",
+        "Poppins": "fonts/Poppins/Poppins-regular.ttf",
     }
 
     page.add(ft.Text("Instagram", font_family="Poppins"))
