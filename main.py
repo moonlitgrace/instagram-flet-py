@@ -13,7 +13,7 @@ def main(page: ft.Page):
     def appbar():
         return (
             ft.Row(
-                controls=[
+                [
                     ft.Text(
                         "Instagram",
                         font_family="Fontspring",
