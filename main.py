@@ -25,7 +25,11 @@ def main(page: ft.Page):
                     ],
                     alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                 ),
-                padding=ft.padding.only(top=10, left=10, right=10)
+                padding=ft.padding.only(
+                    top=10,
+                    left=10,
+                    right=10
+                )
             )
         )
 
@@ -57,4 +61,7 @@ def main(page: ft.Page):
     )
 
 if __name__ == "__main__":
-    ft.app(target=main, assets_dir="assets")
+    ft.app(
+        target=main,
+        assets_dir="assets",
+    )
