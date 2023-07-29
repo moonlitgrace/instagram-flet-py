@@ -25,7 +25,7 @@ def main(page: ft.Page):
                     ],
                     alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                 ),
-                padding=10
+                padding=ft.padding.only(top=10, left=10, right=10)
             )
         )
 
