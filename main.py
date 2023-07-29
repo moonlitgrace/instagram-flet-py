@@ -27,31 +27,28 @@ def main(page: ft.Page):
         padding=ft.padding.symmetric(horizontal=10)
     )
 
-    def slider():
-        return(
-            ft.Stack(
-                [
-                    ft.Container(
-                        width=page.window_width,
-                        height=300,
-                        bgcolor = "#e7ebf4"
-                    ),
-                    ft.Image(
-                        src=f"https://picsum.photos/300/300",
-                        width=page.window_width,
-                        height=300,
-                        fit=ft.ImageFit.COVER,
-                        repeat=ft.ImageRepeat.NO_REPEAT,
-                    )
-                ],
+    post_image = ft.Stack(
+        [
+            ft.Container(
                 width=page.window_width,
                 height=300,
+                bgcolor = "#e7ebf4"
+            ),
+            ft.Image(
+                src=f"https://picsum.photos/300/300",
+                width=page.window_width,
+                height=300,
+                fit=ft.ImageFit.COVER,
+                repeat=ft.ImageRepeat.NO_REPEAT,
             )
-        )
+        ],
+        width=page.window_width,
+        height=300,
+    )
 
     page.add(
         appbar,
-        slider(),
+        post_image,
     )
 
 if __name__ == "__main__":
