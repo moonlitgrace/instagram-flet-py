@@ -10,12 +10,23 @@ def main(page: ft.Page):
         "Fontspring": "fonts/Fontspring/Fontspring-bold.otf",
     }
 
-    page.add(
-        ft.Text(
-            "Instagram",
-            font_family="Fontspring",
-            size=20,
+    def appbar():
+        return (
+            ft.Row(
+                controls=[
+                    ft.Text(
+                        "Instagram",
+                        font_family="Fontspring",
+                        size=20,
+                    ),
+                    ft.IconButton(icon=ft.icons.ADD)
+                ],
+                alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+            )
         )
+
+    page.add(
+        appbar(),
     )
 
 if __name__ == "__main__":
