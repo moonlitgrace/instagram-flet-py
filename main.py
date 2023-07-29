@@ -19,7 +19,7 @@ def main(page: ft.Page):
                     font_family="Fontspring",
                     size=20,
                 ),
-                ft.IconButton(icon=ft.icons.ADD)
+                ft.IconButton(icon=ft.icons.ADD, icon_size=20)
             ],
             alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
             vertical_alignment=ft.CrossAxisAlignment.CENTER,
