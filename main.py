@@ -11,27 +11,21 @@ def main(page: ft.Page):
         "Fontspring": "fonts/Fontspring/Fontspring-bold.otf",
     }
 
-    def appbar():
-        return (
-            ft.Container(
-                content = ft.Row(
-                    [
-                        ft.Text(
-                            "Instagram",
-                            font_family="Fontspring",
-                            size=20,
-                        ),
-                        ft.IconButton(icon=ft.icons.ADD)
-                    ],
-                    alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+    appbar = ft.Container(
+        content = ft.Row(
+            [
+                ft.Text(
+                    "Instagram",
+                    font_family="Fontspring",
+                    size=20,
                 ),
-                padding=ft.padding.only(
-                    top=10,
-                    left=10,
-                    right=10
-                )
-            )
-        )
+                ft.IconButton(icon=ft.icons.ADD)
+            ],
+            alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+            vertical_alignment=ft.CrossAxisAlignment.CENTER,
+        ),
+        padding=ft.padding.symmetric(horizontal=10)
+    )
 
     def slider():
         return(
@@ -56,7 +50,7 @@ def main(page: ft.Page):
         )
 
     page.add(
-        appbar(),
+        appbar,
         slider(),
     )
 
