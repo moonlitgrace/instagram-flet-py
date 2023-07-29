@@ -31,12 +31,23 @@ def main(page: ft.Page):
 
     def slider():
         return(
-            ft.Image(
-                src=f"https://picsum.photos/200/200",
-                width=200,
-                height=200,
-                fit=ft.ImageFit.NONE,
-                repeat=ft.ImageRepeat.NO_REPEAT,
+            ft.Stack(
+                [
+                    ft.Container(
+                        width=page.window_width,
+                        height=300,
+                        bgcolor = "#e7ebf4"
+                    ),
+                    ft.Image(
+                        src=f"https://picsum.photos/300/300",
+                        width=page.window_width,
+                        height=300,
+                        fit=ft.ImageFit.COVER,
+                        repeat=ft.ImageRepeat.NO_REPEAT,
+                    )
+                ],
+                width=page.window_width,
+                height=300,
             )
         )
 
