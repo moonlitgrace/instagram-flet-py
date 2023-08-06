@@ -22,8 +22,8 @@ def main(page: ft.Page):
                 ft.IconButton(
                     content=ft.Image(
                         src="icons/like-outline.svg",
-                        width=15,
-                        height=15,
+                        width=20,
+                        height=20,
                         fit=ft.ImageFit.COVER,
                         repeat=ft.ImageRepeat.NO_REPEAT,
                     )
