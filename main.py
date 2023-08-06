@@ -6,7 +6,6 @@ def main(page: ft.Page):
     page.theme_mode = ft.ThemeMode.LIGHT
     page.padding = 0
     page.spacing = 0
-    page.bgcolor = ft.colors.BLACK
     # configure custom fonts
     page.fonts = {
         "Poppins": "fonts/Poppins/Poppins-regular.ttf",
@@ -20,7 +19,6 @@ def main(page: ft.Page):
                     "Instagram",
                     font_family="Fontspring",
                     size=22,
-                    color=ft.colors.WHITE,
                 ),
                 ft.Row(
                     [
@@ -31,7 +29,6 @@ def main(page: ft.Page):
                                 height=22,
                                 fit=ft.ImageFit.COVER,
                                 repeat=ft.ImageRepeat.NO_REPEAT,
-                                color=ft.colors.WHITE,
                             )
                         ),
                         ft.IconButton(
@@ -41,7 +38,6 @@ def main(page: ft.Page):
                                 height=22,
                                 fit=ft.ImageFit.COVER,
                                 repeat=ft.ImageRepeat.NO_REPEAT,
-                                color=ft.colors.WHITE,
                             )
                         )
                     ],
@@ -69,12 +65,11 @@ def main(page: ft.Page):
                                 ),
                                 ft.Container(
                                     content=ft.Container(
-                                        content=ft.Icon(name=ft.icons.ADD, size=15, color=ft.colors.WHITE),
+                                        content=ft.Icon(name=ft.icons.ADD, size=17, color=ft.colors.BLACK),
                                         width=22,
                                         height=22,
-                                        bgcolor=ft.colors.BLUE,
+                                        bgcolor=ft.colors.WHITE,
                                         border_radius=100,
-                                        border=ft.border.all(1.5, ft.colors.WHITE),
                                     ),
                                     alignment=ft.alignment.bottom_right,
                                 )
@@ -86,7 +81,7 @@ def main(page: ft.Page):
                             "Your Story",
                             size=10,
                             font_family="Poppins",
-                            color=ft.colors.WHITE,
+                            weight=ft.FontWeight.BOLD,
                         )
                     ],
                     spacing=5,
@@ -95,7 +90,7 @@ def main(page: ft.Page):
             ],
         ),
         padding=ft.padding.symmetric(horizontal=20, vertical=10),
-        border=ft.border.symmetric(vertical=ft.BorderSide(1, ft.colors.with_opacity(0.1, ft.colors.WHITE))),
+        border=ft.border.symmetric(vertical=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK))),
     )
 
     page.add(
