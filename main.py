@@ -58,18 +58,25 @@ def main(page: ft.Page):
                             [
                                 image_loader(
                                     src="images/tokito.jpg",
-                                    width=45,
-                                    height=45,
+                                    width=60,
+                                    height=60,
                                     border_radius=50,
                                 ),
                             ]
                         ),
-                        ft.Text("Your Story")
-                    ]
+                        ft.Text(
+                            "Your Story",
+                            size=10,
+                            font_family="Poppins",
+                            weight=ft.FontWeight.BOLD,
+                        )
+                    ],
+                    spacing=5,
+                    horizontal_alignment=ft.CrossAxisAlignment.CENTER
                 )
             ],
         ),
-        padding=ft.padding.symmetric(horizontal=10)  
+        padding=ft.padding.symmetric(horizontal=20)  
     )
 
     page.add(
