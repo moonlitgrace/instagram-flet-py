@@ -19,12 +19,15 @@ def main(page: ft.Page):
                     font_family="Fontspring",
                     size=20,
                 ),
-                ft.IconButton(icon=ft.icons.ADD, icon_size=20)
+                ft.IconButton(
+                    icon=ft.icons.ADD,
+                    icon_size=20
+                )
             ],
             alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
             vertical_alignment=ft.CrossAxisAlignment.CENTER,
         ),
-        padding=ft.padding.symmetric(horizontal=10)
+        padding=ft.padding.only(left=10, right=10, top=5)
     )
 
     def image_loader(image: str):
