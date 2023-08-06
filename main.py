@@ -20,8 +20,13 @@ def main(page: ft.Page):
                     size=20,
                 ),
                 ft.IconButton(
-                    icon=ft.icons.ADD,
-                    icon_size=20
+                    content=ft.Image(
+                        src="icons/like-outline.svg",
+                        width=15,
+                        height=15,
+                        fit=ft.ImageFit.COVER,
+                        repeat=ft.ImageRepeat.NO_REPEAT,
+                    )
                 )
             ],
             alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
