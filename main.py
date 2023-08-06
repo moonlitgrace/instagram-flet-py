@@ -49,9 +49,37 @@ def main(page: ft.Page):
         padding=ft.padding.only(left=10, right=10, top=5)
     )
 
+    stories = ft.Container(
+        content = ft.Row(
+            [
+                ft.Column(
+                    [
+                        ft.Stack(
+                            [
+                                image_loader(
+                                    src="images/tokito.jpg",
+                                    width=45,
+                                    height=45,
+                                    border_radius=50,
+                                ),
+                            ]
+                        ),
+                        ft.Text("Your Story")
+                    ]
+                )
+            ],
+        ),
+        padding=ft.padding.symmetric(horizontal=10)  
+    )
+
     page.add(
         appbar,
-        image_loader("images/post-1.jpg", page.window_width, 300)
+        stories,
+        image_loader(
+            src="images/post-1.jpg",
+            width=page.window_width,
+            height=300
+        ),
     )
 
     page.window_width = 330
