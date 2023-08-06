@@ -5,6 +5,7 @@ from utils import image_loader
 def main(page: ft.Page):
     page.theme_mode = ft.ThemeMode.LIGHT
     page.padding = 0
+    page.spacing = 0
     # configure custom fonts
     page.fonts = {
         "Poppins": "fonts/Poppins/Poppins-regular.ttf",
@@ -46,7 +47,7 @@ def main(page: ft.Page):
             alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
             vertical_alignment=ft.CrossAxisAlignment.CENTER,
         ),
-        padding=ft.padding.only(left=10, right=10, top=5)
+        padding=ft.padding.symmetric(horizontal=10, vertical=7),
     )
 
     stories = ft.Container(
@@ -64,14 +65,11 @@ def main(page: ft.Page):
                                 ),
                                 ft.Container(
                                     content=ft.Container(
-                                        content=ft.Icon(name=ft.icons.ADD, size=15, color="#ffffff"),
+                                        content=ft.Icon(name=ft.icons.ADD, size=17, color=ft.colors.BLACK),
                                         width=22,
                                         height=22,
-                                        bgcolor="#3a94e0",
+                                        bgcolor=ft.colors.WHITE,
                                         border_radius=100,
-                                        alignment=ft.alignment.center,
-                                        padding=0,
-                                        border=ft.border.all(2, ft.colors.WHITE)
                                     ),
                                     alignment=ft.alignment.bottom_right,
                                 )
@@ -87,11 +85,12 @@ def main(page: ft.Page):
                         )
                     ],
                     spacing=5,
-                    horizontal_alignment=ft.CrossAxisAlignment.CENTER
+                    horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 )
             ],
         ),
-        padding=ft.padding.symmetric(horizontal=20)  
+        padding=ft.padding.symmetric(horizontal=20, vertical=10),
+        border=ft.border.symmetric(vertical=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK))),
     )
 
     page.add(
