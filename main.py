@@ -57,7 +57,7 @@ def main(page: ft.Page):
 
     page.add(
         appbar,
-        image_loader("https://picsum.photos/300/300")
+        image_loader("images/post-1.jpg")
     )
 
 if __name__ == "__main__":
