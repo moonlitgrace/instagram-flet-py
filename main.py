@@ -91,12 +91,23 @@ def main(page: ft.Page):
                 ft.Column(
                     [
                         ft.Container(
-                            content=image_loader(
-                                src="images/tokito.jpg",
-                                width=60,
-                                height=60,
+                            content=ft.Container(
+                                content=image_loader(
+                                    src="images/tokito.jpg",
+                                    width=50,
+                                    height=50,
+                                    border_radius=100,
+                                ),
                                 border_radius=100,
+                                border=ft.border.all(3, ft.colors.WHITE),
                             ),
+                            border_radius=100,
+                            gradient=ft.LinearGradient(
+                                begin=ft.alignment.top_center,
+                                end=ft.alignment.bottom_center,
+                                colors=[ft.colors.BLUE, ft.colors.YELLOW],
+                            ),
+                            padding=3,
                         ),
                         ft.Text(
                             "baseplate-admin",
@@ -105,7 +116,7 @@ def main(page: ft.Page):
                             weight=ft.FontWeight.BOLD,
                         )
                     ],
-                    spacing=5,
+                    spacing=4,
                     horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 )
             ],
