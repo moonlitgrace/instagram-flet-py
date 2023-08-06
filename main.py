@@ -19,14 +19,28 @@ def main(page: ft.Page):
                     font_family="Fontspring",
                     size=20,
                 ),
-                ft.IconButton(
-                    content=ft.Image(
-                        src="icons/like-outline.svg",
-                        width=20,
-                        height=20,
-                        fit=ft.ImageFit.COVER,
-                        repeat=ft.ImageRepeat.NO_REPEAT,
-                    )
+                ft.Row(
+                    [
+                        ft.IconButton(
+                            content=ft.Image(
+                                src="icons/like-outline.svg",
+                                width=20,
+                                height=20,
+                                fit=ft.ImageFit.COVER,
+                                repeat=ft.ImageRepeat.NO_REPEAT,
+                            )
+                        ),
+                        ft.IconButton(
+                            content=ft.Image(
+                                src="icons/messenger-outline.svg",
+                                width=20,
+                                height=20,
+                                fit=ft.ImageFit.COVER,
+                                repeat=ft.ImageRepeat.NO_REPEAT,
+                            )
+                        )
+                    ],
+                    spacing=0
                 )
             ],
             alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
