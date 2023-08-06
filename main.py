@@ -27,28 +27,29 @@ def main(page: ft.Page):
         padding=ft.padding.symmetric(horizontal=10)
     )
 
-    post_image = ft.Stack(
-        [
-            ft.Container(
-                width=page.window_width,
-                height=300,
-                bgcolor = "#e7ebf4"
-            ),
-            ft.Image(
-                src=f"https://picsum.photos/300/300",
-                width=page.window_width,
-                height=300,
-                fit=ft.ImageFit.COVER,
-                repeat=ft.ImageRepeat.NO_REPEAT,
-            )
-        ],
-        width=page.window_width,
-        height=300,
-    )
+    def image_loader(image: str):
+        return ft.Stack(
+            [
+                ft.Container(
+                    width=page.window_width,
+                    height=300,
+                    bgcolor = "#e7ebf4"
+                ),
+                ft.Image(
+                    src=image,
+                    width=page.window_width,
+                    height=300,
+                    fit=ft.ImageFit.COVER,
+                    repeat=ft.ImageRepeat.NO_REPEAT,
+                )
+            ],
+            width=page.window_width,
+            height=300,
+        )
 
     page.add(
         appbar,
-        post_image,
+        image_loader("https://picsum.photos/300/300")
     )
 
 if __name__ == "__main__":
