@@ -1,9 +1,9 @@
 import flet as ft
 
+from utils import image_loader
+
 def main(page: ft.Page):
     page.theme_mode = ft.ThemeMode.LIGHT
-    page.window_width = 330
-    page.window_height = 660
     page.padding = 0
     # configure custom fonts
     page.fonts = {
@@ -35,30 +35,14 @@ def main(page: ft.Page):
         padding=ft.padding.only(left=10, right=10, top=5)
     )
 
-    def image_loader(image: str):
-        return ft.Stack(
-            [
-                ft.Container(
-                    width=page.window_width,
-                    height=300,
-                    bgcolor = "#e7ebf4"
-                ),
-                ft.Image(
-                    src=image,
-                    width=page.window_width,
-                    height=300,
-                    fit=ft.ImageFit.COVER,
-                    repeat=ft.ImageRepeat.NO_REPEAT,
-                )
-            ],
-            width=page.window_width,
-            height=300,
-        )
-
     page.add(
         appbar,
-        image_loader("images/post-1.jpg")
+        image_loader("images/post-1.jpg", page.window_width, 300)
     )
+
+    page.window_width = 330
+    page.window_height = 660
+    page.update()
 
 if __name__ == "__main__":
     ft.app(
