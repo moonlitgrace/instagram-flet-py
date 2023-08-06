@@ -17,15 +17,15 @@ def main(page: ft.Page):
                 ft.Text(
                     "Instagram",
                     font_family="Fontspring",
-                    size=20,
+                    size=22,
                 ),
                 ft.Row(
                     [
                         ft.IconButton(
                             content=ft.Image(
                                 src="icons/like-outline.svg",
-                                width=20,
-                                height=20,
+                                width=22,
+                                height=22,
                                 fit=ft.ImageFit.COVER,
                                 repeat=ft.ImageRepeat.NO_REPEAT,
                             )
@@ -33,8 +33,8 @@ def main(page: ft.Page):
                         ft.IconButton(
                             content=ft.Image(
                                 src="icons/messenger-outline.svg",
-                                width=20,
-                                height=20,
+                                width=22,
+                                height=22,
                                 fit=ft.ImageFit.COVER,
                                 repeat=ft.ImageRepeat.NO_REPEAT,
                             )
