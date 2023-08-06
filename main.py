@@ -86,6 +86,27 @@ def main(page: ft.Page):
                     ],
                     spacing=5,
                     horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                ),
+                # other stories
+                ft.Column(
+                    [
+                        ft.Container(
+                            content=image_loader(
+                                src="images/tokito.jpg",
+                                width=60,
+                                height=60,
+                                border_radius=100,
+                            ),
+                        ),
+                        ft.Text(
+                            "baseplate-admin",
+                            size=10,
+                            font_family="Poppins",
+                            weight=ft.FontWeight.BOLD,
+                        )
+                    ],
+                    spacing=5,
+                    horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 )
             ],
         ),
