@@ -62,7 +62,22 @@ def main(page: ft.Page):
                                     height=60,
                                     border_radius=50,
                                 ),
-                            ]
+                                ft.Container(
+                                    content=ft.Container(
+                                        content=ft.Icon(name=ft.icons.ADD, size=15, color="#ffffff"),
+                                        width=22,
+                                        height=22,
+                                        bgcolor="#3a94e0",
+                                        border_radius=100,
+                                        alignment=ft.alignment.center,
+                                        padding=0,
+                                        border=ft.border.all(2, ft.colors.WHITE)
+                                    ),
+                                    alignment=ft.alignment.bottom_right,
+                                )
+                            ],
+                            width=60,
+                            height=60,
                         ),
                         ft.Text(
                             "Your Story",
