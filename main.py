@@ -102,11 +102,12 @@ def main(page: ft.Page):
                                 ),
                                 ft.Container(
                                     content=ft.Container(
-                                        content=ft.Icon(name=ft.icons.ADD, size=17, color=ft.colors.BLACK),
+                                        content=ft.Icon(name=ft.icons.ADD, size=17, color=ft.colors.WHITE),
                                         width=22,
                                         height=22,
-                                        bgcolor=ft.colors.WHITE,
+                                        bgcolor=ft.colors.BLUE,
                                         border_radius=100,
+                                        border=ft.border.all(2, ft.colors.WHITE)
                                     ),
                                     alignment=ft.alignment.bottom_right,
                                 )
