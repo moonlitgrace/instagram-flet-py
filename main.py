@@ -147,13 +147,32 @@ def main(page: ft.Page):
       padding=ft.padding.symmetric(vertical=10)
    )
 
+   def post_view(pfp: str, username: str, image: str, likes: int, title: str):
+      return ft.Container(
+         content=ft.Column([
+            ft.Row([
+               image_loader(
+                  src=pfp,
+                  width=30,
+                  height=30,
+                  border_radius=100
+               ),
+               ft.Text(username, size=10, font_family="Poppins", weight=ft.FontWeight.BOLD)
+            ])
+         ]),
+         padding=ft.padding.all(10),
+         border=ft.border.only(top=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK)))
+      )
+
    page.add(
       appbar,
       stories,
-      image_loader(
-         src="images/post-1.jpg",
-         width=page.window_width,
-         height=300
+      post_view(
+         pfp="images/tokito.jpg",
+         username="tokitou-san",
+         image="images/post-1.jpg",
+         likes=106,
+         title="Joyboy has returned"
       ),
    )
 
