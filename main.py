@@ -12,6 +12,41 @@ def main(page: ft.Page):
         "Fontspring": "fonts/Fontspring/Fontspring-bold.otf",
     }
 
+    def story_view(image: str, username: str):
+        return ft.Container(
+            content=ft.Column(
+                [
+                    ft.Container(
+                        content=ft.Container(
+                            content=image_loader(
+                                src=image,
+                                width=50,
+                                height=50,
+                                border_radius=100,
+                            ),
+                            border_radius=100,
+                            border=ft.border.all(3, ft.colors.WHITE),
+                        ),
+                        border_radius=100,
+                        gradient=ft.LinearGradient(
+                            begin=ft.alignment.top_center,
+                            end=ft.alignment.bottom_center,
+                            colors=[ft.colors.BLUE, ft.colors.YELLOW],
+                        ),
+                        padding=3,
+                    ),
+                    ft.Text(
+                        username,
+                        size=10,
+                        font_family="Poppins",
+                        weight=ft.FontWeight.BOLD,
+                    )
+                ],
+                spacing=4,
+                horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            ),
+        )
+
     appbar = ft.Container(
         content = ft.Row(
             [
@@ -88,37 +123,7 @@ def main(page: ft.Page):
                     horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 ),
                 # other stories
-                ft.Column(
-                    [
-                        ft.Container(
-                            content=ft.Container(
-                                content=image_loader(
-                                    src="images/tokito.jpg",
-                                    width=50,
-                                    height=50,
-                                    border_radius=100,
-                                ),
-                                border_radius=100,
-                                border=ft.border.all(3, ft.colors.WHITE),
-                            ),
-                            border_radius=100,
-                            gradient=ft.LinearGradient(
-                                begin=ft.alignment.top_center,
-                                end=ft.alignment.bottom_center,
-                                colors=[ft.colors.BLUE, ft.colors.YELLOW],
-                            ),
-                            padding=3,
-                        ),
-                        ft.Text(
-                            "baseplate-admin",
-                            size=10,
-                            font_family="Poppins",
-                            weight=ft.FontWeight.BOLD,
-                        )
-                    ],
-                    spacing=4,
-                    horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                )
+                story_view(image="images/baseplate.png", username="baseplate-admin"),
             ],
         ),
         padding=ft.padding.symmetric(horizontal=20, vertical=10),
