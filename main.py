@@ -227,6 +227,13 @@ def main(page: ft.Page):
             ft.Container(
                content=ft.Text(f"{likes} Likes", font_family="Poppins", size=10, weight=ft.FontWeight.BOLD),
                padding=ft.padding.symmetric(horizontal=10)
+            ),
+            ft.Container(
+               content=ft.Row([
+                  ft.Text(f"@{username}", font_family="Poppins", size=10, weight=ft.FontWeight.BOLD),
+                  ft.Text(title, font_family="Poppins", size=10, weight=ft.FontWeight.BOLD)
+               ]),
+               padding=ft.padding.symmetric(horizontal=10, vertical=5)
             )
          ],
          spacing=0),
