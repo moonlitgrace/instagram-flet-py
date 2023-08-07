@@ -158,7 +158,12 @@ def main(page: ft.Page):
                   border_radius=100
                ),
                ft.Text(username, size=10, font_family="Poppins", weight=ft.FontWeight.BOLD)
-            ])
+            ]),
+            image_loader(
+               src=image,
+               width=page.window_width,
+               height=300
+            ),
          ]),
          padding=ft.padding.all(10),
          border=ft.border.only(top=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK)))
