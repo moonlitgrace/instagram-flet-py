@@ -48,6 +48,42 @@ def main(page: ft.Page):
          ),
       )
 
+   addstory = ft.Column(
+      [
+         ft.Stack(
+            [
+               image_loader(
+                  src="images/tokito.jpg",
+                  width=60,
+                  height=60,
+                  border_radius=50,
+               ),
+               ft.Container(
+                  content=ft.Container(
+                     content=ft.Icon(name=ft.icons.ADD, size=13, color=ft.colors.WHITE),
+                     width=22,
+                     height=22,
+                     bgcolor=ft.colors.BLUE,
+                     border_radius=100,
+                     border=ft.border.all(3, ft.colors.WHITE)
+                  ),
+                  alignment=ft.alignment.bottom_right,
+               )
+            ],
+            width=60,
+            height=60,
+         ),
+         ft.Text(
+            "Your Story",
+            size=8,
+            font_family="Poppins",
+            weight=ft.FontWeight.BOLD,
+         )
+      ],
+      spacing=5,
+      horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+   )
+
    appbar = ft.Container(
       content = ft.Row(
          [
@@ -92,42 +128,8 @@ def main(page: ft.Page):
          [
             ft.Container(
                content=ft.Row(
-                  [
-                     ft.Column(
-                        [
-                           ft.Stack(
-                              [
-                                 image_loader(
-                                    src="images/tokito.jpg",
-                                    width=60,
-                                    height=60,
-                                    border_radius=50,
-                                 ),
-                                 ft.Container(
-                                    content=ft.Container(
-                                       content=ft.Icon(name=ft.icons.ADD, size=13, color=ft.colors.WHITE),
-                                       width=22,
-                                       height=22,
-                                       bgcolor=ft.colors.BLUE,
-                                       border_radius=100,
-                                       border=ft.border.all(3, ft.colors.WHITE)
-                                    ),
-                                    alignment=ft.alignment.bottom_right,
-                                 )
-                              ],
-                              width=60,
-                              height=60,
-                           ),
-                           ft.Text(
-                              "Your Story",
-                              size=8,
-                              font_family="Poppins",
-                              weight=ft.FontWeight.BOLD,
-                           )
-                        ],
-                        spacing=5,
-                        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                     ),
+                  [ 
+                     addstory,
                      # other stories
                      story_view(image="images/baseplate.png", username="sheldon"),
                      story_view(image="images/pfp-1.jpg", username="marin"),
