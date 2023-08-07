@@ -25,15 +25,16 @@ def main(page: ft.Page):
                                 border_radius=100,
                             ),
                             border_radius=100,
-                            border=ft.border.all(3, ft.colors.WHITE),
+                            border=ft.border.all(2, ft.colors.WHITE),
                         ),
                         border_radius=100,
                         gradient=ft.LinearGradient(
                             begin=ft.alignment.top_center,
                             end=ft.alignment.bottom_center,
                             colors=[ft.colors.BLUE, ft.colors.YELLOW],
+                            rotation=45,
                         ),
-                        padding=3,
+                        padding=2,
                     ),
                     ft.Text(
                         username,
