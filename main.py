@@ -22,29 +22,29 @@ def main(page: ft.Page):
                         src=image,
                            width=60,
                            height=60,
-                           border_radius=100,
+                           border_radius=100
                         ),
                         border_radius=100,
-                        border=ft.border.all(3, ft.colors.WHITE),
+                        border=ft.border.all(3, ft.colors.WHITE)
                      ),
                      border_radius=100,
                      gradient=ft.LinearGradient(
                      begin=ft.alignment.top_center,
                      end=ft.alignment.bottom_center,
                      colors=[ft.colors.BLUE, ft.colors.YELLOW],
-                     rotation=45,
+                     rotation=45
                   ),
-                  padding=2.5,
+                  padding=2.5
                ),
                ft.Text(
                   username,
                   size=8,
                   font_family="Poppins",
-                  weight=ft.FontWeight.BOLD,
+                  weight=ft.FontWeight.BOLD
                )
             ],
             spacing=3,
-            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER
          ),
       )
 
@@ -56,7 +56,7 @@ def main(page: ft.Page):
                   src="images/tokito.jpg",
                   width=60,
                   height=60,
-                  border_radius=50,
+                  border_radius=50
                ),
                ft.Container(
                   content=ft.Container(
@@ -67,21 +67,21 @@ def main(page: ft.Page):
                      border_radius=100,
                      border=ft.border.all(3, ft.colors.WHITE)
                   ),
-                  alignment=ft.alignment.bottom_right,
+                  alignment=ft.alignment.bottom_right
                )
             ],
             width=60,
-            height=60,
+            height=60
          ),
          ft.Text(
             "Your Story",
             size=8,
             font_family="Poppins",
-            weight=ft.FontWeight.BOLD,
+            weight=ft.FontWeight.BOLD
          )
       ],
       spacing=5,
-      horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+      horizontal_alignment=ft.CrossAxisAlignment.CENTER
    )
 
    appbar = ft.Container(
@@ -90,7 +90,7 @@ def main(page: ft.Page):
             ft.Text(
                "Instagram",
                font_family="Fontspring",
-               size=22,
+               size=22
             ),
             ft.Row(
                [
@@ -100,7 +100,7 @@ def main(page: ft.Page):
                         width=22,
                         height=22,
                         fit=ft.ImageFit.COVER,
-                        repeat=ft.ImageRepeat.NO_REPEAT,
+                        repeat=ft.ImageRepeat.NO_REPEAT
                      )
                   ),
                   ft.Container(
@@ -109,18 +109,18 @@ def main(page: ft.Page):
                         width=22,
                         height=22,
                         fit=ft.ImageFit.COVER,
-                        repeat=ft.ImageRepeat.NO_REPEAT,
+                        repeat=ft.ImageRepeat.NO_REPEAT
                      )
                   )
                ],
-               spacing=15,
+               spacing=15
             )
          ],
          alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
-         vertical_alignment=ft.CrossAxisAlignment.CENTER,
+         vertical_alignment=ft.CrossAxisAlignment.CENTER
       ),
       padding=ft.padding.all(10),
-      border=ft.border.only(bottom=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK))),
+      border=ft.border.only(bottom=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK)))
    )
 
    stories = ft.Container(
