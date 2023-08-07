@@ -160,7 +160,7 @@ def main(page: ft.Page):
                         height=30,
                         border_radius=100
                      ),
-                     ft.Text(username, size=10, font_family="Poppins", weight=ft.FontWeight.BOLD)
+                     ft.Text(username, size=11, font_family="Poppins", weight=ft.FontWeight.BOLD)
                   ]),
                   ft.Image(src="icons/more.svg", height=20)
                ],
@@ -170,7 +170,7 @@ def main(page: ft.Page):
             image_loader(
                src=image,
                width=page.window_width,
-               height=300
+               height=350
             ),
          ],
          spacing=0),
@@ -182,7 +182,7 @@ def main(page: ft.Page):
       stories,
       post_view(
          pfp="images/tokito.jpg",
-         username="tokitou-san",
+         username="tokitou_san",
          image="images/post-1.jpg",
          likes=106,
          title="Joyboy has returned"
