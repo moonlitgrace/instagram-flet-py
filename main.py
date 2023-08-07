@@ -90,53 +90,60 @@ def main(page: ft.Page):
     stories = ft.Container(
         content = ft.Row(
             [
-                ft.Column(
-                    [
-                        ft.Stack(
-                            [
-                                image_loader(
-                                    src="images/tokito.jpg",
-                                    width=60,
-                                    height=60,
-                                    border_radius=50,
-                                ),
-                                ft.Container(
-                                    content=ft.Container(
-                                        content=ft.Icon(name=ft.icons.ADD, size=13, color=ft.colors.WHITE),
-                                        width=22,
-                                        height=22,
-                                        bgcolor=ft.colors.BLUE,
-                                        border_radius=100,
-                                        border=ft.border.all(3, ft.colors.WHITE)
+                ft.Container(
+                    content=ft.Row(
+                        [
+                            ft.Column(
+                                [
+                                    ft.Stack(
+                                        [
+                                            image_loader(
+                                                src="images/tokito.jpg",
+                                                width=60,
+                                                height=60,
+                                                border_radius=50,
+                                            ),
+                                            ft.Container(
+                                                content=ft.Container(
+                                                    content=ft.Icon(name=ft.icons.ADD, size=13, color=ft.colors.WHITE),
+                                                    width=22,
+                                                    height=22,
+                                                    bgcolor=ft.colors.BLUE,
+                                                    border_radius=100,
+                                                    border=ft.border.all(3, ft.colors.WHITE)
+                                                ),
+                                                alignment=ft.alignment.bottom_right,
+                                            )
+                                        ],
+                                        width=60,
+                                        height=60,
                                     ),
-                                    alignment=ft.alignment.bottom_right,
-                                )
-                            ],
-                            width=60,
-                            height=60,
-                        ),
-                        ft.Text(
-                            "Your Story",
-                            size=8,
-                            font_family="Poppins",
-                            weight=ft.FontWeight.BOLD,
-                        )
-                    ],
-                    spacing=5,
-                    horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                ),
-                # other stories
-                story_view(image="images/baseplate.png", username="sheldon"),
-                story_view(image="images/pfp-1.jpg", username="marin"),
-                story_view(image="images/pfp-2.jpg", username="sunx_prox"),
-                story_view(image="images/pfp-3.jpg", username="monkey.d.luffy"),
-                story_view(image="images/pfp-4.jpg", username="sssuneeth"),
+                                    ft.Text(
+                                        "Your Story",
+                                        size=8,
+                                        font_family="Poppins",
+                                        weight=ft.FontWeight.BOLD,
+                                    )
+                                ],
+                                spacing=5,
+                                horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                            ),
+                            # other stories
+                            story_view(image="images/baseplate.png", username="sheldon"),
+                            story_view(image="images/pfp-1.jpg", username="marin"),
+                            story_view(image="images/pfp-2.jpg", username="sunx_prox"),
+                            story_view(image="images/pfp-3.jpg", username="monkey.d.luffy"),
+                            story_view(image="images/pfp-4.jpg", username="sssuneeth"),
+                        ]
+                    ),
+                    padding=ft.padding.symmetric(horizontal=20),
+                )
             ],
             scroll=ft.ScrollMode.HIDDEN,
             vertical_alignment=ft.CrossAxisAlignment.CENTER,
             spacing=10,
         ),
-        padding=ft.padding.symmetric(horizontal=20, vertical=10),
+        padding=ft.padding.symmetric(vertical=10),
     )
 
     page.add(
