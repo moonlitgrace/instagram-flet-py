@@ -162,8 +162,9 @@ def main(page: ft.Page):
                      ),
                      ft.Text(username, size=10, font_family="Poppins", weight=ft.FontWeight.BOLD)
                   ]),
-                  ft.Icon(name=ft.icons.THREESIXTY)
-               ]),
+                  ft.Image(src="icons/more.svg", height=20)
+               ],
+               alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
                padding=ft.padding.all(10)
             ),
             image_loader(
