@@ -20,8 +20,8 @@ def main(page: ft.Page):
                         content=ft.Container(
                             content=image_loader(
                                 src=image,
-                                width=50,
-                                height=50,
+                                width=52,
+                                height=52,
                                 border_radius=100,
                             ),
                             border_radius=100,
@@ -38,7 +38,7 @@ def main(page: ft.Page):
                     ),
                     ft.Text(
                         username,
-                        size=10,
+                        size=8,
                         font_family="Poppins",
                         weight=ft.FontWeight.BOLD,
                     )
@@ -116,7 +116,7 @@ def main(page: ft.Page):
                         ),
                         ft.Text(
                             "Your Story",
-                            size=10,
+                            size=8,
                             font_family="Poppins",
                             weight=ft.FontWeight.BOLD,
                         )
@@ -125,10 +125,10 @@ def main(page: ft.Page):
                     horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 ),
                 # other stories
-                story_view(image="images/baseplate.png", username="baseplate-admin"),
+                story_view(image="images/baseplate.png", username="sheldon"),
                 story_view(image="images/pfp-1.jpg", username="marin"),
-                story_view(image="images/pfp-2.jpg", username="sora_amamiya"),
-                story_view(image="images/pfp-3.jpg", username="d.luffy"),
+                story_view(image="images/pfp-2.jpg", username="sunx_prox"),
+                story_view(image="images/pfp-3.jpg", username="monkey.d.luffy"),
                 story_view(image="images/pfp-4.jpg", username="sssuneeth"),
             ],
             scroll=ft.ScrollMode.HIDDEN,
