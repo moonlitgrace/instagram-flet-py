@@ -6,6 +6,7 @@ def main(page: ft.Page):
    page.theme_mode = ft.ThemeMode.LIGHT
    page.padding = 0
    page.spacing = 0
+   page.scroll = ft.ScrollMode.HIDDEN
    # configure custom fonts
    page.fonts = {
       "Poppins": "fonts/Poppins/Poppins-regular.ttf",
@@ -150,22 +151,28 @@ def main(page: ft.Page):
    def post_view(pfp: str, username: str, image: str, likes: int, title: str):
       return ft.Container(
          content=ft.Column([
-            ft.Row([
-               image_loader(
-                  src=pfp,
-                  width=30,
-                  height=30,
-                  border_radius=100
-               ),
-               ft.Text(username, size=10, font_family="Poppins", weight=ft.FontWeight.BOLD)
-            ]),
+            ft.Container(
+               content=ft.Row([
+                  ft.Row([
+                     image_loader(
+                        src=pfp,
+                        width=30,
+                        height=30,
+                        border_radius=100
+                     ),
+                     ft.Text(username, size=10, font_family="Poppins", weight=ft.FontWeight.BOLD)
+                  ]),
+                  ft.Icon(name=ft.icons.THREESIXTY)
+               ]),
+               padding=ft.padding.all(10)
+            ),
             image_loader(
                src=image,
                width=page.window_width,
                height=300
             ),
-         ]),
-         padding=ft.padding.all(10),
+         ],
+         spacing=0),
          border=ft.border.only(top=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK)))
       )
 
