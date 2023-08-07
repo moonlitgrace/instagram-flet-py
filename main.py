@@ -83,6 +83,7 @@ def main(page: ft.Page):
             vertical_alignment=ft.CrossAxisAlignment.CENTER,
         ),
         padding=ft.padding.symmetric(horizontal=10, vertical=7),
+        border=ft.border.only(bottom=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK))),
     )
 
     stories = ft.Container(
@@ -124,10 +125,14 @@ def main(page: ft.Page):
                 ),
                 # other stories
                 story_view(image="images/baseplate.png", username="baseplate-admin"),
+                story_view(image="images/pfp-1.jpg", username="marin"),
+                story_view(image="images/pfp-2.jpg", username="sora_amamiya"),
+                story_view(image="images/pfp-3.jpg", username="d.luffy"),
+                story_view(image="images/pfp-4.jpg", username="sssuneeth"),
             ],
+            scroll=ft.ScrollMode.HIDDEN,
         ),
         padding=ft.padding.symmetric(horizontal=20, vertical=10),
-        border=ft.border.symmetric(vertical=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK))),
     )
 
     page.add(
