@@ -139,14 +139,12 @@ def main(page: ft.Page):
                      story_view(image="images/pfp-4.jpg", username="sssuneeth"),
                   ]
                ),
-               padding=ft.padding.symmetric(horizontal=10),
+               padding=ft.padding.symmetric(horizontal=10)
             )
          ],
-         scroll=ft.ScrollMode.HIDDEN,
-         vertical_alignment=ft.CrossAxisAlignment.CENTER,
-         spacing=10,
+         scroll=ft.ScrollMode.HIDDEN
       ),
-      padding=ft.padding.symmetric(vertical=10),
+      padding=ft.padding.symmetric(vertical=10)
    )
 
    page.add(
