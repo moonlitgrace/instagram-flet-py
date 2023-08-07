@@ -20,12 +20,12 @@ def main(page: ft.Page):
                         content=ft.Container(
                             content=image_loader(
                                 src=image,
-                                width=52,
-                                height=52,
+                                width=60,
+                                height=60,
                                 border_radius=100,
                             ),
                             border_radius=100,
-                            border=ft.border.all(2, ft.colors.WHITE),
+                            border=ft.border.all(3, ft.colors.WHITE),
                         ),
                         border_radius=100,
                         gradient=ft.LinearGradient(
@@ -34,7 +34,7 @@ def main(page: ft.Page):
                             colors=[ft.colors.BLUE, ft.colors.YELLOW],
                             rotation=45,
                         ),
-                        padding=2,
+                        padding=2.5,
                     ),
                     ft.Text(
                         username,
@@ -43,7 +43,7 @@ def main(page: ft.Page):
                         weight=ft.FontWeight.BOLD,
                     )
                 ],
-                spacing=4,
+                spacing=3,
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,
             ),
         )
@@ -133,6 +133,8 @@ def main(page: ft.Page):
                 story_view(image="images/pfp-4.jpg", username="sssuneeth"),
             ],
             scroll=ft.ScrollMode.HIDDEN,
+            vertical_alignment=ft.CrossAxisAlignment.CENTER,
+            spacing=10,
         ),
         padding=ft.padding.symmetric(horizontal=20, vertical=10),
     )
