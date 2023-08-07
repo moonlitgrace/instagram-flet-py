@@ -162,16 +162,68 @@ def main(page: ft.Page):
                      ),
                      ft.Text(username, size=11, font_family="Poppins", weight=ft.FontWeight.BOLD)
                   ]),
-                  ft.Image(src="icons/more.svg", height=20)
+                  ft.Container(
+                     content=ft.Image(
+                        src="icons/more.svg",
+                        width=22,
+                        height=22,
+                        fit=ft.ImageFit.COVER,
+                        repeat=ft.ImageRepeat.NO_REPEAT
+                     )
+                  ),
                ],
                alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
-               padding=ft.padding.all(10)
+               padding=ft.padding.only(left=10, top=10, bottom=10, right=2)
             ),
             image_loader(
                src=image,
                width=page.window_width,
                height=350
             ),
+            ft.Container(
+               content=ft.Row([
+                  ft.Row([
+                     ft.Container(
+                        content=ft.Image(
+                           src="icons/like-outline.svg",
+                           width=22,
+                           height=22,
+                           fit=ft.ImageFit.COVER,
+                           repeat=ft.ImageRepeat.NO_REPEAT
+                        )
+                     ),
+                     ft.Container(
+                        content=ft.Image(
+                           src="icons/comment.svg",
+                           width=22,
+                           height=22,
+                           fit=ft.ImageFit.COVER,
+                           repeat=ft.ImageRepeat.NO_REPEAT
+                        )
+                     ),
+                     ft.Container(
+                        content=ft.Image(
+                           src="icons/share.svg",
+                           width=18,
+                           height=18,
+                           fit=ft.ImageFit.COVER,
+                           repeat=ft.ImageRepeat.NO_REPEAT
+                        )
+                     ),
+                  ]),
+                  ft.Container(
+                     content=ft.Image(
+                        src="icons/save.svg",
+                        width=18,
+                        height=18,
+                        fit=ft.ImageFit.COVER,
+                        repeat=ft.ImageRepeat.NO_REPEAT
+                     )
+                  ),
+               ],
+               alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
+               padding=ft.padding.all(10)
+            )
          ],
          spacing=0),
          border=ft.border.only(top=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK)))
