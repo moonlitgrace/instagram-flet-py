@@ -222,7 +222,11 @@ def main(page: ft.Page):
                   ),
                ],
                alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
-               padding=ft.padding.all(10)
+               padding=ft.padding.symmetric(vertical=7, horizontal=10)
+            ),
+            ft.Container(
+               content=ft.Text(f"{likes} Likes", font_family="Poppins", size=10, weight=ft.FontWeight.BOLD),
+               padding=ft.padding.symmetric(horizontal=10)
             )
          ],
          spacing=0),
@@ -236,7 +240,7 @@ def main(page: ft.Page):
          pfp="images/tokito.jpg",
          username="tokitou_san",
          image="images/post-1.jpg",
-         likes=106,
+         likes=10574,
          title="Joyboy has returned"
       ),
    )
