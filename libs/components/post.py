@@ -65,7 +65,8 @@ def post_view(page: ft.Page, pfp: str, username: str, image: str, likes: int, ti
                            width=18,
                            height=18,
                            fit=ft.ImageFit.COVER,
-                           repeat=ft.ImageRepeat.NO_REPEAT
+                           repeat=ft.ImageRepeat.NO_REPEAT,
+                           rotate=0.35
                         )
                      ),
                   ]),
@@ -75,7 +76,7 @@ def post_view(page: ft.Page, pfp: str, username: str, image: str, likes: int, ti
                         width=18,
                         height=18,
                         fit=ft.ImageFit.COVER,
-                        repeat=ft.ImageRepeat.NO_REPEAT
+                        repeat=ft.ImageRepeat.NO_REPEAT,
                      )
                   ),
                ],
@@ -91,7 +92,7 @@ def post_view(page: ft.Page, pfp: str, username: str, image: str, likes: int, ti
                   ft.Text(f"@{username}", font_family="Roboto-Bold", size=11, weight=ft.FontWeight.BOLD),
                   ft.Text(title, font_family="Roboto-Medium", size=11)
                ]),
-               padding=ft.padding.symmetric(horizontal=10, vertical=5)
+               padding=ft.padding.symmetric(horizontal=10)
             )
          ],
          spacing=0),

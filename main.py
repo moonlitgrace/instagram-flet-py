@@ -1,6 +1,6 @@
 import flet as ft
-
 from utils import image_loader
+# Components
 from libs.components.appbar import appbar
 from libs.components.story import story_view, add_story
 from libs.components.post import post_view
@@ -32,7 +32,7 @@ def main(page: ft.Page):
                      # add story button
                      add_story(pfp="images/tokito.jpg"),
                      # other stories
-                     story_view(image="images/baseplate.png", username="sheldon"),
+                     story_view(image="images/baseplate.png", username="sheldon_shit"),
                      story_view(image="images/pfp-1.jpg", username="marin"),
                      story_view(image="images/pfp-2.jpg", username="sunx_prox"),
                      story_view(image="images/pfp-3.jpg", username="monkey.d.luffy"),
