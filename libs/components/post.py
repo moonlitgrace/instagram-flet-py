@@ -15,8 +15,8 @@ def post_view(page: ft.Page, pfp: str, username: str, image: str, likes: int, ti
                         border_radius=100
                      ),
                      ft.Column([
-                        ft.Text(username, size=11, font_family="Poppins", weight=ft.FontWeight.BOLD),
-                        ft.Text("One piece original theme song", size=8, font_family="Poppins", color=with_opacity(0.75, ft.colors.BLACK))
+                        ft.Text(username, size=12, font_family="Roboto-Medium",),
+                        ft.Text("One piece ft.Luffy bgm", size=9, font_family="Roboto", color=with_opacity(0.75, ft.colors.BLACK))
                      ],
                      spacing=0)
                   ]),
@@ -83,13 +83,13 @@ def post_view(page: ft.Page, pfp: str, username: str, image: str, likes: int, ti
                padding=ft.padding.symmetric(vertical=7, horizontal=10)
             ),
             ft.Container(
-               content=ft.Text(f"{likes} Likes", font_family="Poppins", size=10, weight=ft.FontWeight.BOLD),
+               content=ft.Text(f"{likes} Likes", font_family="Roboto-Bold", size=11),
                padding=ft.padding.symmetric(horizontal=10)
             ),
             ft.Container(
                content=ft.Row([
-                  ft.Text(f"@{username}", font_family="Poppins", size=10, weight=ft.FontWeight.BOLD),
-                  ft.Text(title, font_family="Poppins", size=10, weight=ft.FontWeight.BOLD)
+                  ft.Text(f"@{username}", font_family="Roboto-Bold", size=11, weight=ft.FontWeight.BOLD),
+                  ft.Text(title, font_family="Roboto-Medium", size=11)
                ]),
                padding=ft.padding.symmetric(horizontal=10, vertical=5)
             )
