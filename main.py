@@ -17,6 +17,10 @@ def main(page: ft.Page):
    page.fonts = {
       "Poppins": "fonts/Poppins/Poppins-regular.ttf",
       "Fontspring": "fonts/Fontspring/Fontspring-bold.otf",
+      # Roboto variants
+      "Roboto": "fonts/Roboto/Roboto-Regular.ttf",
+      "Roboto-Medium": "fonts/Roboto/Roboto-Medium.ttf",
+      "Roboto-Bold": "fonts/Roboto/Roboto-Bold.ttf",
    }
 
    stories = ft.Container(
@@ -52,7 +56,7 @@ def main(page: ft.Page):
          username="tokitou_san",
          image="images/post-1.jpg",
          likes=10574,
-         title="Joyboy has returned"
+         title="⚡ Joyboy has returned!!!"
       ),
    )
 
