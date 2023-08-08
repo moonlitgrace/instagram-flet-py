@@ -84,20 +84,17 @@ def post_view(page: ft.Page, pfp: str, username: str, image: str, likes: int, ti
                padding=ft.padding.symmetric(vertical=7, horizontal=10)
             ),
             ft.Container(
-               content=ft.Text(f"{likes} Likes", font_family="Roboto-Medium", size=11),
-               padding=ft.padding.symmetric(horizontal=10)
-            ),
-            ft.Container(
-               content=ft.Row([
-                  ft.Text(f"@{username}", font_family="Roboto-Bold", size=11, weight=ft.FontWeight.BOLD),
-                  ft.Text(title, font_family="Roboto-Medium", size=11)
-               ]),
-               padding=ft.padding.symmetric(horizontal=10)
-            ),
-            ft.Container(
-               content=ft.Text("3hr ago", font_family="Roboto", size=10),
-               padding=ft.padding.symmetric(horizontal=10)
-            ),
+               content=ft.Column([
+                  ft.Text(f"{likes} Likes", font_family="Roboto-Medium", size=11),
+                  ft.Row([
+                     ft.Text(f"@{username}", font_family="Roboto-Bold", size=11, weight=ft.FontWeight.BOLD),
+                     ft.Text(title, font_family="Roboto-Medium", size=11)
+                  ]),
+                  ft.Text("3hr ago", font_family="Roboto", size=10)
+               ],
+               spacing=0),
+               padding=ft.padding.only(left=10, right=10, bottom=10)
+            )
          ],
          spacing=0),
          border=ft.border.only(top=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK)))
