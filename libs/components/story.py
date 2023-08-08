@@ -26,10 +26,9 @@ def story_view(image: str, username: str):
                   padding=2.5
                ),
                ft.Text(
-                  username,
-                  size=8,
-                  font_family="Poppins",
-                  weight=ft.FontWeight.BOLD
+                  f"@{username}",
+                  size=9.5,
+                  font_family="Roboto-Medium",
                )
             ],
             spacing=3,
@@ -65,9 +64,8 @@ def add_story(pfp: str):
             ),
             ft.Text(
                "Your Story",
-               size=8,
-               font_family="Poppins",
-               weight=ft.FontWeight.BOLD
+               size=9.5,
+               font_family="Roboto-Medium",
             )
          ],
          spacing=5,
