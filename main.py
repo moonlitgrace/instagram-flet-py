@@ -1,128 +1,23 @@
 import flet as ft
 
 from utils import image_loader
+from libs.components.appbar import appbar
+from libs.components.story import story_view, add_story
+from libs.components.post import post_view
 
 def main(page: ft.Page):
    page.theme_mode = ft.ThemeMode.LIGHT
    page.padding = 0
    page.spacing = 0
    page.scroll = ft.ScrollMode.HIDDEN
+   page.window_width = 330
+   page.window_height = 660
+   page.update()
    # configure custom fonts
    page.fonts = {
       "Poppins": "fonts/Poppins/Poppins-regular.ttf",
       "Fontspring": "fonts/Fontspring/Fontspring-bold.otf",
    }
-
-   appbar = ft.Container(
-      content = ft.Row(
-         [
-            ft.Text(
-               "Instagram",
-               font_family="Fontspring",
-               size=22
-            ),
-            ft.Row(
-               [
-                  ft.Container(
-                     content=ft.Image(
-                        src="icons/like-outline.svg",
-                        width=22,
-                        height=22,
-                        fit=ft.ImageFit.COVER,
-                        repeat=ft.ImageRepeat.NO_REPEAT
-                     )
-                  ),
-                  ft.Container(
-                     content=ft.Image(
-                        src="icons/messenger-outline.svg",
-                        width=22,
-                        height=22,
-                        fit=ft.ImageFit.COVER,
-                        repeat=ft.ImageRepeat.NO_REPEAT
-                     )
-                  )
-               ],
-               spacing=15
-            )
-         ],
-         alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
-         vertical_alignment=ft.CrossAxisAlignment.CENTER
-      ),
-      padding=ft.padding.all(10),
-      border=ft.border.only(bottom=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK)))
-   )
-
-   def story_view(image: str, username: str):
-      return ft.Container(
-         content=ft.Column(
-            [
-               ft.Container(
-                  content=ft.Container(
-                     content=image_loader(
-                        src=image,
-                           width=60,
-                           height=60,
-                           border_radius=100
-                        ),
-                        border_radius=100,
-                        border=ft.border.all(3, ft.colors.WHITE)
-                     ),
-                     border_radius=100,
-                     gradient=ft.LinearGradient(
-                     begin=ft.alignment.top_center,
-                     end=ft.alignment.bottom_center,
-                     colors=[ft.colors.BLUE, ft.colors.YELLOW],
-                     rotation=45
-                  ),
-                  padding=2.5
-               ),
-               ft.Text(
-                  username,
-                  size=8,
-                  font_family="Poppins",
-                  weight=ft.FontWeight.BOLD
-               )
-            ],
-            spacing=3,
-            horizontal_alignment=ft.CrossAxisAlignment.CENTER
-         ),
-      )
-
-   addstory = ft.Column(
-      [
-         ft.Stack(
-            [
-               image_loader(
-                  src="images/tokito.jpg",
-                  width=60,
-                  height=60,
-                  border_radius=50
-               ),
-               ft.Container(
-                  content=ft.Container(
-                     content=ft.Icon(name=ft.icons.ADD, size=13, color=ft.colors.WHITE),
-                     width=22,
-                     height=22,
-                     bgcolor=ft.colors.BLUE,
-                     border_radius=100,
-                     border=ft.border.all(3, ft.colors.WHITE)
-                  ),
-                  alignment=ft.alignment.bottom_right
-               )
-            ],
-            width=60,
-            height=60
-         ),
-         ft.Text(
-            "Your Story",
-            size=8,
-            font_family="Poppins",
-            weight=ft.FontWeight.BOLD
-         )
-      ],
-      spacing=5,
-      horizontal_alignment=ft.CrossAxisAlignment.CENTER
-   )
 
    stories = ft.Container(
       content = ft.Row(
@@ -131,7 +26,7 @@ def main(page: ft.Page):
                content=ft.Row(
                   [
                      # add story button
-                     addstory,
+                     add_story(pfp="images/tokito.jpg"),
                      # other stories
                      story_view(image="images/baseplate.png", username="sheldon"),
                      story_view(image="images/pfp-1.jpg", username="marin"),
@@ -148,102 +43,11 @@ def main(page: ft.Page):
       padding=ft.padding.symmetric(vertical=10)
    )
 
-   def post_view(pfp: str, username: str, image: str, likes: int, title: str):
-      return ft.Container(
-         content=ft.Column([
-            ft.Container(
-               content=ft.Row([
-                  ft.Row([
-                     image_loader(
-                        src=pfp,
-                        width=30,
-                        height=30,
-                        border_radius=100
-                     ),
-                     ft.Text(username, size=11, font_family="Poppins", weight=ft.FontWeight.BOLD)
-                  ]),
-                  ft.Container(
-                     content=ft.Image(
-                        src="icons/more.svg",
-                        width=22,
-                        height=22,
-                        fit=ft.ImageFit.COVER,
-                        repeat=ft.ImageRepeat.NO_REPEAT
-                     )
-                  ),
-               ],
-               alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
-               padding=ft.padding.only(left=10, top=10, bottom=10, right=2)
-            ),
-            image_loader(
-               src=image,
-               width=page.window_width,
-               height=350
-            ),
-            ft.Container(
-               content=ft.Row([
-                  ft.Row([
-                     ft.Container(
-                        content=ft.Image(
-                           src="icons/like-outline.svg",
-                           width=22,
-                           height=22,
-                           fit=ft.ImageFit.COVER,
-                           repeat=ft.ImageRepeat.NO_REPEAT
-                        )
-                     ),
-                     ft.Container(
-                        content=ft.Image(
-                           src="icons/comment.svg",
-                           width=22,
-                           height=22,
-                           fit=ft.ImageFit.COVER,
-                           repeat=ft.ImageRepeat.NO_REPEAT
-                        )
-                     ),
-                     ft.Container(
-                        content=ft.Image(
-                           src="icons/share.svg",
-                           width=18,
-                           height=18,
-                           fit=ft.ImageFit.COVER,
-                           repeat=ft.ImageRepeat.NO_REPEAT
-                        )
-                     ),
-                  ]),
-                  ft.Container(
-                     content=ft.Image(
-                        src="icons/save.svg",
-                        width=18,
-                        height=18,
-                        fit=ft.ImageFit.COVER,
-                        repeat=ft.ImageRepeat.NO_REPEAT
-                     )
-                  ),
-               ],
-               alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
-               padding=ft.padding.symmetric(vertical=7, horizontal=10)
-            ),
-            ft.Container(
-               content=ft.Text(f"{likes} Likes", font_family="Poppins", size=10, weight=ft.FontWeight.BOLD),
-               padding=ft.padding.symmetric(horizontal=10)
-            ),
-            ft.Container(
-               content=ft.Row([
-                  ft.Text(f"@{username}", font_family="Poppins", size=10, weight=ft.FontWeight.BOLD),
-                  ft.Text(title, font_family="Poppins", size=10, weight=ft.FontWeight.BOLD)
-               ]),
-               padding=ft.padding.symmetric(horizontal=10, vertical=5)
-            )
-         ],
-         spacing=0),
-         border=ft.border.only(top=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK)))
-      )
-
    page.add(
-      appbar,
+      appbar(),
       stories,
       post_view(
+         page=page,
          pfp="images/tokito.jpg",
          username="tokitou_san",
          image="images/post-1.jpg",
@@ -251,10 +55,6 @@ def main(page: ft.Page):
          title="Joyboy has returned"
       ),
    )
-
-   page.window_width = 330
-   page.window_height = 660
-   page.update()
 
 if __name__ == "__main__":
    ft.app(
