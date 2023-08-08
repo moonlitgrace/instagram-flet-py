@@ -93,7 +93,11 @@ def post_view(page: ft.Page, pfp: str, username: str, image: str, likes: int, ti
                   ft.Text(title, font_family="Roboto-Medium", size=11)
                ]),
                padding=ft.padding.symmetric(horizontal=10)
-            )
+            ),
+            ft.Container(
+               content=ft.Text("3hr ago", font_family="Roboto", size=11),
+               padding=ft.padding.symmetric(horizontal=10)
+            ),
          ],
          spacing=0),
          border=ft.border.only(top=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK)))
