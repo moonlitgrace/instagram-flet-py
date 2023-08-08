@@ -15,9 +15,9 @@ def main(page: ft.Page):
    page.update()
    # configure custom fonts
    page.fonts = {
-      "Poppins": "fonts/Poppins/Poppins-regular.ttf",
+      # Instagram logo font
       "Fontspring": "fonts/Fontspring/Fontspring-bold.otf",
-      # Roboto variants
+      # Roboto ( default font ) variants
       "Roboto": "fonts/Roboto/Roboto-Regular.ttf",
       "Roboto-Medium": "fonts/Roboto/Roboto-Medium.ttf",
       "Roboto-Bold": "fonts/Roboto/Roboto-Bold.ttf",
