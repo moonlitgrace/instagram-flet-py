@@ -1,4 +1,5 @@
 import flet as ft
+from flet_core.colors import with_opacity
 from utils import image_loader
 
 def post_view(page: ft.Page, pfp: str, username: str, image: str, likes: int, title: str):
@@ -13,7 +14,11 @@ def post_view(page: ft.Page, pfp: str, username: str, image: str, likes: int, ti
                         height=30,
                         border_radius=100
                      ),
-                     ft.Text(username, size=11, font_family="Poppins", weight=ft.FontWeight.BOLD)
+                     ft.Column([
+                        ft.Text(username, size=11, font_family="Poppins", weight=ft.FontWeight.BOLD),
+                        ft.Text("One piece original theme song", size=8, font_family="Poppins", color=with_opacity(0.75, ft.colors.BLACK))
+                     ],
+                     spacing=0)
                   ]),
                   ft.Container(
                      content=ft.Image(
