@@ -1,0 +1,94 @@
+import flet as ft
+from utils import image_loader
+
+def post_view(page: ft.Page, pfp: str, username: str, image: str, likes: int, title: str):
+      return ft.Container(
+         content=ft.Column([
+            ft.Container(
+               content=ft.Row([
+                  ft.Row([
+                     image_loader(
+                        src=pfp,
+                        width=30,
+                        height=30,
+                        border_radius=100
+                     ),
+                     ft.Text(username, size=11, font_family="Poppins", weight=ft.FontWeight.BOLD)
+                  ]),
+                  ft.Container(
+                     content=ft.Image(
+                        src="icons/more.svg",
+                        width=22,
+                        height=22,
+                        fit=ft.ImageFit.COVER,
+                        repeat=ft.ImageRepeat.NO_REPEAT
+                     )
+                  ),
+               ],
+               alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
+               padding=ft.padding.only(left=10, top=10, bottom=10, right=2)
+            ),
+            image_loader(
+               src=image,
+               width=page.window_width,
+               height=350
+            ),
+            ft.Container(
+               content=ft.Row([
+                  ft.Row([
+                     ft.Container(
+                        content=ft.Image(
+                           src="icons/like-outline.svg",
+                           width=22,
+                           height=22,
+                           fit=ft.ImageFit.COVER,
+                           repeat=ft.ImageRepeat.NO_REPEAT
+                        )
+                     ),
+                     ft.Container(
+                        content=ft.Image(
+                           src="icons/comment.svg",
+                           width=22,
+                           height=22,
+                           fit=ft.ImageFit.COVER,
+                           repeat=ft.ImageRepeat.NO_REPEAT
+                        )
+                     ),
+                     ft.Container(
+                        content=ft.Image(
+                           src="icons/share.svg",
+                           width=18,
+                           height=18,
+                           fit=ft.ImageFit.COVER,
+                           repeat=ft.ImageRepeat.NO_REPEAT
+                        )
+                     ),
+                  ]),
+                  ft.Container(
+                     content=ft.Image(
+                        src="icons/save.svg",
+                        width=18,
+                        height=18,
+                        fit=ft.ImageFit.COVER,
+                        repeat=ft.ImageRepeat.NO_REPEAT
+                     )
+                  ),
+               ],
+               alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
+               padding=ft.padding.symmetric(vertical=7, horizontal=10)
+            ),
+            ft.Container(
+               content=ft.Text(f"{likes} Likes", font_family="Poppins", size=10, weight=ft.FontWeight.BOLD),
+               padding=ft.padding.symmetric(horizontal=10)
+            ),
+            ft.Container(
+               content=ft.Row([
+                  ft.Text(f"@{username}", font_family="Poppins", size=10, weight=ft.FontWeight.BOLD),
+                  ft.Text(title, font_family="Poppins", size=10, weight=ft.FontWeight.BOLD)
+               ]),
+               padding=ft.padding.symmetric(horizontal=10, vertical=5)
+            )
+         ],
+         spacing=0),
+         border=ft.border.only(top=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK)))
+      )
