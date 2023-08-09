@@ -4,6 +4,7 @@ from utils import image_loader
 from libs.components.appbar import appbar
 from libs.components.story import story_view, add_story
 from libs.components.post import post_view
+from libs.components.navigation_bar import navigation_bar
 
 def main(page: ft.Page):
    page.theme_mode = ft.ThemeMode.LIGHT
@@ -58,6 +59,7 @@ def main(page: ft.Page):
          likes=10574,
          title="⚡ Joyboy has returned!!!"
       ),
+      navigation_bar,
    )
 
 if __name__ == "__main__":
