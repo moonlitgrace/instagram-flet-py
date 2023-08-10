@@ -1,6 +1,6 @@
 import flet as ft
 from flet_core.colors import with_opacity
-from utils import image_loader
+from utils import image_loader, icon
 
 def post_view(page: ft.Page, pfp: str, username: str, image: str, likes: int, title: str):
       return ft.Container(
@@ -20,15 +20,7 @@ def post_view(page: ft.Page, pfp: str, username: str, image: str, likes: int, ti
                      ],
                      spacing=0)
                   ]),
-                  ft.Container(
-                     content=ft.Image(
-                        src="icons/more.svg",
-                        width=22,
-                        height=22,
-                        fit=ft.ImageFit.COVER,
-                        repeat=ft.ImageRepeat.NO_REPEAT
-                     )
-                  ),
+                  icon(src="icons/more.svg", width=22, height=22),
                ],
                alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
                padding=ft.padding.only(left=10, top=10, bottom=10, right=2)
@@ -41,44 +33,11 @@ def post_view(page: ft.Page, pfp: str, username: str, image: str, likes: int, ti
             ft.Container(
                content=ft.Row([
                   ft.Row([
-                     ft.Container(
-                        content=ft.Image(
-                           src="icons/like-outline.svg",
-                           width=22,
-                           height=22,
-                           fit=ft.ImageFit.COVER,
-                           repeat=ft.ImageRepeat.NO_REPEAT
-                        )
-                     ),
-                     ft.Container(
-                        content=ft.Image(
-                           src="icons/comment.svg",
-                           width=22,
-                           height=22,
-                           fit=ft.ImageFit.COVER,
-                           repeat=ft.ImageRepeat.NO_REPEAT
-                        )
-                     ),
-                     ft.Container(
-                        content=ft.Image(
-                           src="icons/share.svg",
-                           width=18,
-                           height=18,
-                           fit=ft.ImageFit.COVER,
-                           repeat=ft.ImageRepeat.NO_REPEAT,
-                           rotate=0.35
-                        )
-                     ),
+                     icon(src="icons/like-outline.svg", width=22, height=22),
+                     icon(src="icons/comment.svg", width=22, height=22),
+                     icon(src="icons/share.svg", width=18, height=18),
                   ]),
-                  ft.Container(
-                     content=ft.Image(
-                        src="icons/save.svg",
-                        width=18,
-                        height=18,
-                        fit=ft.ImageFit.COVER,
-                        repeat=ft.ImageRepeat.NO_REPEAT,
-                     )
-                  ),
+                  icon(src="icons/save.svg", width=17, height=17),
                ],
                alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
                padding=ft.padding.symmetric(vertical=7, horizontal=10)
