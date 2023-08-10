@@ -1,0 +1,53 @@
+import flet as ft
+
+navigation_bar = ft.Container(
+	content=ft.Row([
+		ft.Container(
+	        content=ft.Image(
+	            src="icons/home.svg",
+	            width=22,
+	            height=22,
+	            fit=ft.ImageFit.COVER,
+	           	repeat=ft.ImageRepeat.NO_REPEAT
+	        )
+	    ),
+	    ft.Container(
+	        content=ft.Image(
+	            src="icons/search.svg",
+	            width=25,
+	            height=25,
+	            fit=ft.ImageFit.COVER,
+	           	repeat=ft.ImageRepeat.NO_REPEAT
+	        )
+	    ),
+	    ft.Container(
+	        content=ft.Image(
+	            src="icons/add_box.svg",
+	            width=25,
+	            height=25,
+	            fit=ft.ImageFit.COVER,
+	           	repeat=ft.ImageRepeat.NO_REPEAT
+	        )
+	    ),
+	    ft.Container(
+	        content=ft.Image(
+	            src="icons/reel.svg",
+	            width=18,
+	            height=18,
+	            fit=ft.ImageFit.COVER,
+	           	repeat=ft.ImageRepeat.NO_REPEAT
+	        )
+	    ),
+	    ft.Container(
+	        content=ft.Image(
+	            src="icons/user.svg",
+	            width=22,
+	            height=22,
+	            fit=ft.ImageFit.COVER,
+	           	repeat=ft.ImageRepeat.NO_REPEAT
+	        )
+	    ),
+	],
+	alignment=ft.MainAxisAlignment.SPACE_AROUND),
+	padding=ft.padding.all(10)
+)
