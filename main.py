@@ -60,8 +60,7 @@ def main(page: ft.Page):
             title="⚡ Joyboy has returned!!!"
          ),
       ],
-      expand=True,
-      auto_scroll=True),
+      expand=True),
       navigation_bar
    )
 
