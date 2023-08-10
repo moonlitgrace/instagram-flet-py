@@ -10,7 +10,43 @@ navigation_bar = ft.Container(
 	            fit=ft.ImageFit.COVER,
 	           	repeat=ft.ImageRepeat.NO_REPEAT
 	        )
-	     ),
+	    ),
+	    ft.Container(
+	        content=ft.Image(
+	            src="icons/search.svg",
+	            width=22,
+	            height=22,
+	            fit=ft.ImageFit.COVER,
+	           	repeat=ft.ImageRepeat.NO_REPEAT
+	        )
+	    ),
+	    ft.Container(
+	        content=ft.Image(
+	            src="icons/add_box.svg",
+	            width=22,
+	            height=22,
+	            fit=ft.ImageFit.COVER,
+	           	repeat=ft.ImageRepeat.NO_REPEAT
+	        )
+	    ),
+	    ft.Container(
+	        content=ft.Image(
+	            src="icons/reel.svg",
+	            width=15,
+	            height=15,
+	            fit=ft.ImageFit.COVER,
+	           	repeat=ft.ImageRepeat.NO_REPEAT
+	        )
+	    ),
+	    ft.Container(
+	        content=ft.Image(
+	            src="icons/user.svg",
+	            width=18,
+	            height=18,
+	            fit=ft.ImageFit.COVER,
+	           	repeat=ft.ImageRepeat.NO_REPEAT
+	        )
+	    ),
 	]),
 	padding=ft.padding.all(10)
 )
