@@ -10,7 +10,6 @@ def main(page: ft.Page):
    page.theme_mode = ft.ThemeMode.LIGHT
    page.padding = 0
    page.spacing = 0
-   page.scroll = ft.ScrollMode.HIDDEN
    page.window_width = 330
    page.window_height = 660
    page.update()
@@ -49,17 +48,21 @@ def main(page: ft.Page):
    )
 
    page.add(
-      appbar(),
-      stories,
-      post_view(
-         page=page,
-         pfp="images/tokito.jpg",
-         username="tokitou_san",
-         image="images/post-1.jpg",
-         likes=10574,
-         title="⚡ Joyboy has returned!!!"
-      ),
-      navigation_bar,
+      ft.ListView([
+         appbar(),
+         stories,
+         post_view(
+            page=page,
+            pfp="images/tokito.jpg",
+            username="tokitou_san",
+            image="images/post-1.jpg",
+            likes=10574,
+            title="⚡ Joyboy has returned!!!"
+         ),
+      ],
+      expand=True,
+      auto_scroll=True),
+      navigation_bar
    )
 
 if __name__ == "__main__":
