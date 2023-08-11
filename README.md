@@ -1,1 +1,1 @@
-<img alt="Frame 2" src="https://github.com/tokitou-san/Instagram-UI/assets/114811070/3a58b499-0c9b-4b2c-bd7c-a66469edac06">
+<img width="791" alt="Frame 1(15)" src="https://github.com/tokitou-san/Instagram-UI/assets/114811070/e148719c-adb4-41ce-83fa-8ebd633b9b9a">
