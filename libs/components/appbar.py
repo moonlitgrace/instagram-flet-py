@@ -22,5 +22,4 @@ def appbar():
             vertical_alignment=ft.CrossAxisAlignment.CENTER
          ),
          padding=ft.padding.all(10),
-         border=ft.border.only(bottom=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK)))
       )

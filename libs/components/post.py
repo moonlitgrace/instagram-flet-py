@@ -56,5 +56,4 @@ def post_view(page: ft.Page, pfp: str, username: str, image: str, likes: int, ti
             )
          ],
          spacing=0),
-         border=ft.border.only(top=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK)))
       )

@@ -44,22 +44,36 @@ def main(page: ft.Page):
          ],
          scroll=ft.ScrollMode.HIDDEN
       ),
-      padding=ft.padding.symmetric(vertical=10)
+      padding=ft.padding.symmetric(vertical=10),
+      border=ft.border.symmetric(vertical=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK)))
    )
+
+   posts = ft.ListView([
+      post_view(
+         page=page,
+         pfp="images/tokito.jpg",
+         username="tokitou_san",
+         image="images/post-1.jpg",
+         likes=10574,
+         title="⚡ Joyboy has returned!!!",
+         bg_song="One piece ft.Luffy bgm"
+      ),
+      post_view(
+         page=page,
+         pfp="images/baseplate.png",
+         username="sheldon_shit",
+         image="images/post-2.jpg",
+         likes=24875,
+         title="Like if I'm a Gay :P",
+         bg_song="I'm a Gay!"
+      ),
+   ])
 
    page.add(
       ft.ListView([
          appbar(),
          stories,
-         post_view(
-            page=page,
-            pfp="images/tokito.jpg",
-            username="tokitou_san",
-            image="images/post-1.jpg",
-            likes=10574,
-            title="⚡ Joyboy has returned!!!",
-            bg_song="One piece ft.Luffy bgm"
-         ),
+         posts,
       ],
       expand=True),
       navigation_bar
