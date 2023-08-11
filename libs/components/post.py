@@ -2,7 +2,7 @@ import flet as ft
 from flet_core.colors import with_opacity
 from utils import image_loader, icon
 
-def post_view(page: ft.Page, pfp: str, username: str, image: str, likes: int, title: str):
+def post_view(page: ft.Page, pfp: str, username: str, image: str, likes: int, title: str, bg_song: str):
       return ft.Container(
          content=ft.Column([
             ft.Container(
@@ -16,7 +16,7 @@ def post_view(page: ft.Page, pfp: str, username: str, image: str, likes: int, ti
                      ),
                      ft.Column([
                         ft.Text(username, size=12, font_family="Roboto-Medium",),
-                        ft.Text("One piece ft.Luffy bgm", size=9, font_family="Roboto", color=with_opacity(0.75, ft.colors.BLACK))
+                        ft.Text(bg_song, size=9, font_family="Roboto", color=with_opacity(0.75, ft.colors.BLACK))
                      ],
                      spacing=0)
                   ]),

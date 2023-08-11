@@ -57,7 +57,8 @@ def main(page: ft.Page):
             username="tokitou_san",
             image="images/post-1.jpg",
             likes=10574,
-            title="⚡ Joyboy has returned!!!"
+            title="⚡ Joyboy has returned!!!",
+            bg_song="One piece ft.Luffy bgm"
          ),
       ],
       expand=True),
