@@ -1,7 +1,7 @@
 import flet as ft
 from utils import image_loader
 # Components
-from libs.components.appbar import appbar
+from libs.components.appbar import Appbar
 from libs.components.story import story_view, add_story
 from libs.components.post import post_view
 from libs.components.navigation_bar import navigation_bar
@@ -71,7 +71,7 @@ def main(page: ft.Page):
 
    page.add(
       ft.ListView([
-         appbar(),
+         Appbar(),
          stories,
          posts,
       ],
