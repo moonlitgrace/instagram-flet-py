@@ -12,7 +12,7 @@ def main(page: ft.Page):
    page.spacing = 0
    page.window_width = 330
    page.window_height = 660
-   page.update()
+
    # configure custom fonts
    page.fonts = {
       # Instagram logo font
@@ -22,6 +22,8 @@ def main(page: ft.Page):
       "Roboto-Medium": "fonts/Roboto/Roboto-Medium.ttf",
       "Roboto-Bold": "fonts/Roboto/Roboto-Bold.ttf",
    }
+
+   page.update()
 
    stories = ft.Container(
       content = ft.Row(
@@ -69,7 +71,7 @@ def main(page: ft.Page):
       ),
    ])
 
-   page.add(
+   page.controls = [
       ft.ListView([
          Appbar(),
          stories,
@@ -77,7 +79,9 @@ def main(page: ft.Page):
       ],
       expand=True),
       navigation_bar
-   )
+   ]
+
+   page.update()
 
 if __name__ == "__main__":
    ft.app(
