@@ -28,6 +28,13 @@ def main(page: ft.Page):
       def __init__(self, *args, **kwargs) -> None:
          super(StoriesLayoutView, self).__init__(*args, **kwargs)
 
+         self._initialize_data()
+
+         self.content = self._create_view()
+         self.padding=ft.padding.symmetric(vertical=10)
+         self.border=ft.border.symmetric(vertical=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK)))
+
+      def _initialize_data(self) -> None:
          self.datas = [
             {"image": "images/baseplate.png", "username": "sheldon_shit"},
             {"image": "images/pfp-1.jpg", "username": "marin"},
@@ -39,11 +46,7 @@ def main(page: ft.Page):
          self.stories = [StoryView(**data).create_view() for data in self.datas]
          self.add_story = AddStory(pfp="images/tokito.jpg").create_view()
 
-         self.content = self.__create_view()
-         self.padding=ft.padding.symmetric(vertical=10)
-         self.border=ft.border.symmetric(vertical=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK)))
-
-      def __create_view(self) -> ft.Control:
+      def _create_view(self) -> ft.Control:
          return ft.Row(
             [
                ft.Container(
