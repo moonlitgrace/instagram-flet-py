@@ -3,7 +3,7 @@ from utils import Icon
 
 class Appbar(ft.Container):
    def __init__(self, *args, **kwargs) -> None:
-      super(Appbar, self).__init__(*args, **kwargs)
+      super().__init__(*args, **kwargs)
 
       self.content = self.__create_appbar()
       self.padding = ft.padding.all(10)

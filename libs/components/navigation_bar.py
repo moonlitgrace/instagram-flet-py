@@ -3,7 +3,7 @@ from utils import Icon
 
 class NavigationBar(ft.Container):
 	def __init__(self, *args, **kwargs) -> None:
-		super(NavigationBar, self).__init__(*args, **kwargs)
+		super().__init__(*args, **kwargs)
 
 		self.content = self.__create_navbar()
 		self.padding=ft.padding.all(10)
