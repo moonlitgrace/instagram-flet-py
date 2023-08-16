@@ -4,7 +4,7 @@ from utils import image_loader
 from libs.components.appbar import Appbar
 from libs.components.story import story_view, add_story
 from libs.components.post import post_view
-from libs.components.navigation_bar import navigation_bar
+from libs.components.navigation_bar import NavigationBar
 
 def main(page: ft.Page):
    page.theme_mode = ft.ThemeMode.LIGHT
@@ -78,7 +78,7 @@ def main(page: ft.Page):
          posts,
       ],
       expand=True),
-      navigation_bar
+      NavigationBar(),
    ]
 
    page.update()
