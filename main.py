@@ -36,7 +36,7 @@ def main(page: ft.Page):
             {"image": "images/pfp-4.jpg", "username": "sssuneeth"}
          ]
 
-         self.stories = [StoryView(image=data["image"], username=data["username"]).create_view() for data in self.datas]
+         self.stories = [StoryView(**data).create_view() for data in self.datas]
          self.add_story = AddStory(pfp="images/tokito.jpg").create_view()
 
          self.content = self.__create_view()
