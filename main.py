@@ -1,3 +1,4 @@
+from typing import List
 import flet as ft
 from utils import image_loader
 # Components
@@ -12,7 +13,6 @@ def main(page: ft.Page):
    page.spacing = 0
    page.window_width = 330
    page.window_height = 660
-
    # configure custom fonts
    page.fonts = {
       # Instagram logo font
@@ -22,33 +22,40 @@ def main(page: ft.Page):
       "Roboto-Medium": "fonts/Roboto/Roboto-Medium.ttf",
       "Roboto-Bold": "fonts/Roboto/Roboto-Bold.ttf",
    }
-
    page.update()
 
-   stories = ft.Container(
-      content = ft.Row(
-         [
-            ft.Container(
-               content=ft.Row(
-                  [
-                     # add story button
-                     AddStory(pfp="images/tokito.jpg").create_view(),
-                     # other stories
-                     StoryView(image="images/baseplate.png", username="sheldon_shit").create_view(),
-                     StoryView(image="images/pfp-1.jpg", username="marin").create_view(),
-                     StoryView(image="images/pfp-2.jpg", username="sunx_prox").create_view(),
-                     StoryView(image="images/pfp-3.jpg", username="monkey.d.luffy").create_view(),
-                     StoryView(image="images/pfp-4.jpg", username="sssuneeth").create_view(),
-                  ]
-               ),
-               padding=ft.padding.symmetric(horizontal=10)
-            )
-         ],
-         scroll=ft.ScrollMode.HIDDEN
-      ),
-      padding=ft.padding.symmetric(vertical=10),
-      border=ft.border.symmetric(vertical=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK)))
-   )
+   # generate mock data for stories
+   def generate_stories_data() -> List[ft.Control]:
+      datas = [
+         {"image": "images/baseplate.png", "username": "sheldon_shit"},
+         {"image": "images/pfp-1.jpg", "username": "marin"},
+         {"image": "images/pfp-2.jpg", "username": "sunx_prox"},
+         {"image": "images/pfp-3.jpg", "username": "monkey.d.luffy"},
+         {"image": "images/pfp-4.jpg", "username": "sssuneeth"}
+      ]
+
+      return [StoryView(image=data["image"], username=data["username"]).create_view() for data in datas]
+
+   def stories_layout() -> ft.Container:
+      stories = generate_stories_data()
+      add_story = AddStory(pfp="images/tokito.jpg").create_view()
+
+      return ft.Container(
+         content = ft.Row(
+            [
+               ft.Container(
+                  content=ft.Row([
+                     add_story,
+                     ft.Row(controls=stories)
+                  ]),
+                  padding=ft.padding.symmetric(horizontal=10)
+               )
+            ],
+            scroll=ft.ScrollMode.HIDDEN
+         ),
+         padding=ft.padding.symmetric(vertical=10),
+         border=ft.border.symmetric(vertical=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK)))
+      )
 
    posts = ft.ListView([
       PostView(
@@ -75,7 +82,7 @@ def main(page: ft.Page):
    page.controls = [
       ft.ListView([
          Appbar(),
-         stories,
+         stories_layout(),
          posts,
       ],
       expand=True),
