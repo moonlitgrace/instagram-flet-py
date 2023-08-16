@@ -60,33 +60,40 @@ def main(page: ft.Page):
             scroll=ft.ScrollMode.HIDDEN
          )
 
-   posts = ft.ListView([
-      PostView(
-         page=page,
-         pfp="images/tokito.jpg",
-         username="tokitou_san",
-         image="images/post-1.jpg",
-         likes=10574,
-         title="⚡ Joyboy has returned!!!",
-         bg_song="One piece ft.Luffy bgm"
-      ).create_view(),
+   class PostsLayoutView(ft.ListView):
+      def __init__(self, *args, **kwargs) -> None:
+         super(PostsLayoutView, self).__init__(*args, **kwargs)
 
-      PostView(
-         page=page,
-         pfp="images/baseplate.png",
-         username="sheldon_shit",
-         image="images/post-2.jpg",
-         likes=24875,
-         title="Like if I'm a Gay :P",
-         bg_song="I'm a Gay!"
-      ).create_view(),
-   ])
+         self._initialize_data()
+         self.controls = [PostView(**data).create_view() for data in self.datas]
+
+      def _initialize_data(self) -> None:
+         self.datas = [
+            {
+               "page": page,
+               "pfp": "images/tokito.jpg",
+               "username": "tokitou_san",
+               "image": "images/post-1.jpg",
+               "likes": 10574,
+               "title":"⚡ Joyboy has returned!!!",
+               "bg_song":"One piece ft.Luffy bgm"
+            },
+            {
+               "page": page,
+               "pfp": "images/baseplate.png",
+               "username": "sheldon_shit",
+               "image": "images/post-2.jpg",
+               "likes": 24875,
+               "title":"Like if I'm a Gay :P",
+               "bg_song":"I'm a Gay!"
+            }
+         ]
 
    page.controls = [
       ft.ListView([
          Appbar(),
          StoriesLayoutView(),
-         posts,
+         PostsLayoutView(),
       ],
       expand=True),
       NavigationBar(),
