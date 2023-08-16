@@ -3,7 +3,7 @@ from flet_core.colors import with_opacity
 from utils import image_loader, icon
       
 class PostView:
-   def __init__(self, page: ft.Page, pfp: str, username: str, image: str, likes: int, title: str, bg_song: str):
+   def __init__(self, page: ft.Page, pfp: str, username: str, image: str, likes: int, title: str, bg_song: str) -> None:
 
       self.page = page
       self.pfp = pfp
@@ -13,7 +13,7 @@ class PostView:
       self.title = title
       self.bg_song = bg_song
 
-   def create_view(self):
+   def create_view(self) -> ft.Container:
       return ft.Container(
          content=ft.Column([
             self._create_header(),
@@ -28,7 +28,7 @@ class PostView:
          spacing=0),
       )
 
-   def _create_header(self):
+   def _create_header(self) -> ft.Container:
       return ft.Container(
          content=ft.Row([
             ft.Row([
@@ -50,7 +50,7 @@ class PostView:
          padding=ft.padding.only(left=10, top=10, bottom=10, right=2)
       )
 
-   def _create_options(self):
+   def _create_options(self) -> ft.Container:
       return ft.Container(
          content=ft.Row([
             ft.Row([

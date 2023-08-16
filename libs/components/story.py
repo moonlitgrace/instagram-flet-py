@@ -2,23 +2,27 @@ import flet as ft
 from utils import image_loader
 
 class StoryView:
-   def __init__(self, image: str, username: str):
+   def __init__(self, image: str, username: str) -> None:
       self.image = image
       self.username = username
 
-   def create_view(self):
+   def create_view(self) -> ft.Container:
       return ft.Container(
          content=ft.Column(
             [
                self._create_pfp_view(),
-               self.__create_username()
+               ft.Text(
+                  f"@{self.username}",
+                  size=9.5,
+                  font_family="Roboto-Medium"
+               )
             ],
             spacing=3,
             horizontal_alignment=ft.CrossAxisAlignment.CENTER
          )
       )
 
-   def _create_pfp_view(self):
+   def _create_pfp_view(self) -> ft.Container:
       return ft.Container(
          content=ft.Container(
             content=image_loader(
@@ -40,18 +44,11 @@ class StoryView:
          padding=2.5
       )
 
-   def __create_username(self):
-      return ft.Text(
-         f"@{self.username}",
-         size=9.5,
-         font_family="Roboto-Medium"
-      )
-
 class AddStory:
-   def __init__(self, pfp: str):
+   def __init__(self, pfp: str) -> None:
       self.pfp = pfp
 
-   def create_view(self):
+   def create_view(self) -> ft.Column:
       return ft.Column(
          [
             self._create_pfp_view(),
@@ -65,7 +62,7 @@ class AddStory:
          horizontal_alignment=ft.CrossAxisAlignment.CENTER
       )
 
-   def _create_pfp_view(self):
+   def _create_pfp_view(self) -> ft.Stack:
       return ft.Stack(
          [
             image_loader(
