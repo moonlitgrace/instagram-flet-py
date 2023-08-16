@@ -3,7 +3,7 @@ from utils import image_loader
 # Components
 from libs.components.appbar import Appbar
 from libs.components.story import story_view, add_story
-from libs.components.post import post_view
+from libs.components.post import PostView
 from libs.components.navigation_bar import NavigationBar
 
 def main(page: ft.Page):
@@ -51,7 +51,7 @@ def main(page: ft.Page):
    )
 
    posts = ft.ListView([
-      post_view(
+      PostView(
          page=page,
          pfp="images/tokito.jpg",
          username="tokitou_san",
@@ -59,8 +59,9 @@ def main(page: ft.Page):
          likes=10574,
          title="⚡ Joyboy has returned!!!",
          bg_song="One piece ft.Luffy bgm"
-      ),
-      post_view(
+      ).create_view(),
+      
+      PostView(
          page=page,
          pfp="images/baseplate.png",
          username="sheldon_shit",
@@ -68,7 +69,7 @@ def main(page: ft.Page):
          likes=24875,
          title="Like if I'm a Gay :P",
          bg_song="I'm a Gay!"
-      ),
+      ).create_view(),
    ])
 
    page.controls = [
