@@ -6,7 +6,7 @@ class StoryView:
       self.image = image
       self.username = username
 
-   def create_view(self) -> ft.Container:
+   def create_view(self) -> ft.Control:
       return ft.Container(
          content=ft.Column(
             [

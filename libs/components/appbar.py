@@ -8,7 +8,7 @@ class Appbar(ft.Container):
       self.content = self.__create_appbar()
       self.padding = ft.padding.all(10)
 
-   def __create_appbar(self) -> ft.Row:
+   def __create_appbar(self) -> ft.Control:
       return ft.Row(
          [
             self.__create_app_name(),
@@ -18,14 +18,14 @@ class Appbar(ft.Container):
          vertical_alignment=ft.CrossAxisAlignment.CENTER
       )
 
-   def __create_app_name(self) -> ft.Text:
+   def __create_app_name(self) -> ft.Control:
       return ft.Text(
          "Instagram",
          font_family="Fontspring",
          size=22
       )
 
-   def __create_icons(self) -> ft.Row:
+   def __create_icons(self) -> ft.Control:
       return ft.Row(
          [
             icon(src="icons/like-outline.svg", width=22, height=22),

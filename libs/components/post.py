@@ -13,7 +13,7 @@ class PostView:
       self.title = title
       self.bg_song = bg_song
 
-   def create_view(self) -> ft.Container:
+   def create_view(self) -> ft.Control:
       return ft.Container(
          content=ft.Column([
             self.__create_header(),
@@ -28,7 +28,7 @@ class PostView:
          spacing=0),
       )
 
-   def __create_header(self) -> ft.Container:
+   def __create_header(self) -> ft.Control:
       return ft.Container(
          content=ft.Row([
             ft.Row([
@@ -50,7 +50,7 @@ class PostView:
          padding=ft.padding.only(left=10, top=10, bottom=10, right=2)
       )
 
-   def __create_options(self) -> ft.Container:
+   def __create_options(self) -> ft.Control:
       return ft.Container(
          content=ft.Row([
             ft.Row([
@@ -64,7 +64,7 @@ class PostView:
          padding=ft.padding.symmetric(vertical=7, horizontal=10)
       )
 
-   def __create_footer(self):
+   def __create_footer(self) -> ft.Control:
       return ft.Container(
          content=ft.Column([
             ft.Text(f"{self.likes} Likes", font_family="Roboto-Medium", size=11),

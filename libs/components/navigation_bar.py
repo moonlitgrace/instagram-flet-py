@@ -9,7 +9,7 @@ class NavigationBar(ft.Container):
 		self.padding=ft.padding.all(10)
 		self.border=ft.border.only(top=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK)))
 
-	def __create_navbar(self) -> ft.Row:
+	def __create_navbar(self) -> ft.Control:
 		return ft.Row([
 			    icon(src="icons/home.svg", width=22, height=22),
 			    icon(src="icons/search.svg", width=25, height=25),
