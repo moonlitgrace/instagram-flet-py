@@ -1,10 +1,10 @@
 import flet as ft
 from utils import image_loader
 # Components
-from libs.components.appbar import appbar
-from libs.components.story import story_view, add_story
-from libs.components.post import post_view
-from libs.components.navigation_bar import navigation_bar
+from libs.components.appbar import Appbar
+from libs.components.story import StoryView, AddStory
+from libs.components.post import PostView
+from libs.components.navigation_bar import NavigationBar
 
 def main(page: ft.Page):
    page.theme_mode = ft.ThemeMode.LIGHT
@@ -12,7 +12,7 @@ def main(page: ft.Page):
    page.spacing = 0
    page.window_width = 330
    page.window_height = 660
-   page.update()
+
    # configure custom fonts
    page.fonts = {
       # Instagram logo font
@@ -23,6 +23,8 @@ def main(page: ft.Page):
       "Roboto-Bold": "fonts/Roboto/Roboto-Bold.ttf",
    }
 
+   page.update()
+
    stories = ft.Container(
       content = ft.Row(
          [
@@ -30,13 +32,13 @@ def main(page: ft.Page):
                content=ft.Row(
                   [
                      # add story button
-                     add_story(pfp="images/tokito.jpg"),
+                     AddStory(pfp="images/tokito.jpg").create_view(),
                      # other stories
-                     story_view(image="images/baseplate.png", username="sheldon_shit"),
-                     story_view(image="images/pfp-1.jpg", username="marin"),
-                     story_view(image="images/pfp-2.jpg", username="sunx_prox"),
-                     story_view(image="images/pfp-3.jpg", username="monkey.d.luffy"),
-                     story_view(image="images/pfp-4.jpg", username="sssuneeth"),
+                     StoryView(image="images/baseplate.png", username="sheldon_shit").create_view(),
+                     StoryView(image="images/pfp-1.jpg", username="marin").create_view(),
+                     StoryView(image="images/pfp-2.jpg", username="sunx_prox").create_view(),
+                     StoryView(image="images/pfp-3.jpg", username="monkey.d.luffy").create_view(),
+                     StoryView(image="images/pfp-4.jpg", username="sssuneeth").create_view(),
                   ]
                ),
                padding=ft.padding.symmetric(horizontal=10)
@@ -49,7 +51,7 @@ def main(page: ft.Page):
    )
 
    posts = ft.ListView([
-      post_view(
+      PostView(
          page=page,
          pfp="images/tokito.jpg",
          username="tokitou_san",
@@ -57,8 +59,9 @@ def main(page: ft.Page):
          likes=10574,
          title="⚡ Joyboy has returned!!!",
          bg_song="One piece ft.Luffy bgm"
-      ),
-      post_view(
+      ).create_view(),
+
+      PostView(
          page=page,
          pfp="images/baseplate.png",
          username="sheldon_shit",
@@ -66,18 +69,20 @@ def main(page: ft.Page):
          likes=24875,
          title="Like if I'm a Gay :P",
          bg_song="I'm a Gay!"
-      ),
+      ).create_view(),
    ])
 
-   page.add(
+   page.controls = [
       ft.ListView([
-         appbar(),
+         Appbar(),
          stories,
          posts,
       ],
       expand=True),
-      navigation_bar
-   )
+      NavigationBar(),
+   ]
+
+   page.update()
 
 if __name__ == "__main__":
    ft.app(
