@@ -51,7 +51,7 @@ class AddStory:
    def create_view(self) -> ft.Column:
       return ft.Column(
          [
-            self._create_pfp_view(),
+            self.__create_stack(),
             ft.Text(
                "Your Story",
                size=9.5,
@@ -62,7 +62,7 @@ class AddStory:
          horizontal_alignment=ft.CrossAxisAlignment.CENTER
       )
 
-   def _create_pfp_view(self) -> ft.Stack:
+   def __create_stack(self) -> ft.Stack:
       return ft.Stack(
          [
             image_loader(

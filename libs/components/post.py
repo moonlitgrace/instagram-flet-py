@@ -16,19 +16,19 @@ class PostView:
    def create_view(self) -> ft.Container:
       return ft.Container(
          content=ft.Column([
-            self._create_header(),
+            self.__create_header(),
             image_loader(
                src=self.image,
                width=self.page.window_width,
                height=350
             ),
-            self._create_options(),
-            self._create_footer()
+            self.__create_options(),
+            self.__create_footer()
          ],
          spacing=0),
       )
 
-   def _create_header(self) -> ft.Container:
+   def __create_header(self) -> ft.Container:
       return ft.Container(
          content=ft.Row([
             ft.Row([
@@ -50,7 +50,7 @@ class PostView:
          padding=ft.padding.only(left=10, top=10, bottom=10, right=2)
       )
 
-   def _create_options(self) -> ft.Container:
+   def __create_options(self) -> ft.Container:
       return ft.Container(
          content=ft.Row([
             ft.Row([
@@ -64,7 +64,7 @@ class PostView:
          padding=ft.padding.symmetric(vertical=7, horizontal=10)
       )
 
-   def _create_footer(self):
+   def __create_footer(self):
       return ft.Container(
          content=ft.Column([
             ft.Text(f"{self.likes} Likes", font_family="Roboto-Medium", size=11),
