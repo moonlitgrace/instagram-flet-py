@@ -24,8 +24,10 @@ def main(page: ft.Page):
    }
    page.update()
 
-   class StoriesLayoutView:
-      def __init__(self) -> None:
+   class StoriesLayoutView(ft.Container):
+      def __init__(self, *args, **kwargs) -> None:
+         super(StoriesLayoutView, self).__init__(*args, **kwargs)
+
          self.datas = [
             {"image": "images/baseplate.png", "username": "sheldon_shit"},
             {"image": "images/pfp-1.jpg", "username": "marin"},
@@ -37,22 +39,22 @@ def main(page: ft.Page):
          self.stories = [StoryView(image=data["image"], username=data["username"]).create_view() for data in self.datas]
          self.add_story = AddStory(pfp="images/tokito.jpg").create_view()
 
-      def create_view(self) -> ft.Container:
-         return ft.Container(
-            content = ft.Row(
-               [
-                  ft.Container(
-                     content=ft.Row([
-                        self.add_story,
-                        ft.Row(controls=self.stories)
-                     ]),
-                     padding=ft.padding.symmetric(horizontal=10)
-                  )
-               ],
-               scroll=ft.ScrollMode.HIDDEN
-            ),
-            padding=ft.padding.symmetric(vertical=10),
-            border=ft.border.symmetric(vertical=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK)))
+         self.content = self.__create_view()
+         self.padding=ft.padding.symmetric(vertical=10)
+         self.border=ft.border.symmetric(vertical=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK)))
+
+      def __create_view(self) -> ft.Control:
+         return ft.Row(
+            [
+               ft.Container(
+                  content=ft.Row([
+                     self.add_story,
+                     ft.Row(controls=self.stories)
+                  ]),
+                  padding=ft.padding.symmetric(horizontal=10)
+               )
+            ],
+            scroll=ft.ScrollMode.HIDDEN
          )
 
    posts = ft.ListView([
@@ -80,7 +82,7 @@ def main(page: ft.Page):
    page.controls = [
       ft.ListView([
          Appbar(),
-         StoriesLayoutView().create_view(),
+         StoriesLayoutView(),
          posts,
       ],
       expand=True),
