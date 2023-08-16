@@ -1,6 +1,6 @@
 import flet as ft
 from flet_core.colors import with_opacity
-from utils import image_loader, icon
+from utils import ImageLoader, Icon
       
 class PostView:
    def __init__(self, page: ft.Page, pfp: str, username: str, image: str, likes: int, title: str, bg_song: str) -> None:
@@ -17,7 +17,7 @@ class PostView:
       return ft.Container(
          content=ft.Column([
             self.__create_header(),
-            image_loader(
+            ImageLoader(
                src=self.image,
                width=self.page.window_width,
                height=350
@@ -32,7 +32,7 @@ class PostView:
       return ft.Container(
          content=ft.Row([
             ft.Row([
-               image_loader(
+               ImageLoader(
                   src=self.pfp,
                   width=30,
                   height=30,
@@ -44,7 +44,7 @@ class PostView:
                ],
                spacing=0)
             ]),
-            icon(src="icons/more.svg", width=22, height=22),
+            Icon(src="icons/more.svg", width=22, height=22),
          ],
          alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
          padding=ft.padding.only(left=10, top=10, bottom=10, right=2)
@@ -54,11 +54,11 @@ class PostView:
       return ft.Container(
          content=ft.Row([
             ft.Row([
-               icon(src="icons/like-outline.svg", width=22, height=22),
-               icon(src="icons/comment.svg", width=22, height=22),
-               icon(src="icons/share.svg", width=18, height=18),
+               Icon(src="icons/like-outline.svg", width=22, height=22),
+               Icon(src="icons/comment.svg", width=22, height=22),
+               Icon(src="icons/share.svg", width=18, height=18),
             ]),
-            icon(src="icons/save.svg", width=17, height=17),
+            Icon(src="icons/save.svg", width=17, height=17),
          ],
          alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
          padding=ft.padding.symmetric(vertical=7, horizontal=10)

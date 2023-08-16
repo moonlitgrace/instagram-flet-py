@@ -1,6 +1,6 @@
 from typing import List
 import flet as ft
-from utils import image_loader
+from utils import ImageLoader
 # Components
 from libs.components.appbar import Appbar
 from libs.components.story import StoryView, AddStory

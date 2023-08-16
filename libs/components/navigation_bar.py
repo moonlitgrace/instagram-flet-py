@@ -1,5 +1,5 @@
 import flet as ft
-from utils import icon
+from utils import Icon
 
 class NavigationBar(ft.Container):
 	def __init__(self, *args, **kwargs) -> None:
@@ -11,11 +11,11 @@ class NavigationBar(ft.Container):
 
 	def __create_navbar(self) -> ft.Control:
 		return ft.Row([
-			    icon(src="icons/home.svg", width=22, height=22),
-			    icon(src="icons/search.svg", width=25, height=25),
-			    icon(src="icons/add_box.svg", width=25, height=25),
-			    icon(src="icons/reel.svg", width=18, height=18),
-			    icon(src="icons/user.svg", width=22, height=22),
+			    Icon(src="icons/home.svg", width=22, height=22),
+			    Icon(src="icons/search.svg", width=25, height=25),
+			    Icon(src="icons/add_box.svg", width=25, height=25),
+			    Icon(src="icons/reel.svg", width=18, height=18),
+			    Icon(src="icons/user.svg", width=22, height=22),
 			],
 			alignment=ft.MainAxisAlignment.SPACE_AROUND
 		)

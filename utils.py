@@ -1,6 +1,6 @@
 import flet as ft
 
-def image_loader(src: str, width: ft.OptionalNumber, height: int, border_radius: int = 0):
+def ImageLoader(src: str, width: ft.OptionalNumber, height: int, border_radius: int = 0) -> ft.Control:
    return ft.Stack(
       [
          ft.Container(
@@ -22,7 +22,7 @@ def image_loader(src: str, width: ft.OptionalNumber, height: int, border_radius:
       height=height,
    )
 
-def icon(src: str, width: int, height: int) -> ft.Container:
+def Icon(src: str, width: int, height: int) -> ft.Control:
    return ft.Container(
       content=ft.Image(
          src=src,

@@ -1,5 +1,5 @@
 import flet as ft
-from utils import icon
+from utils import Icon
 
 class Appbar(ft.Container):
    def __init__(self, *args, **kwargs) -> None:
@@ -28,8 +28,8 @@ class Appbar(ft.Container):
    def __create_icons(self) -> ft.Control:
       return ft.Row(
          [
-            icon(src="icons/like-outline.svg", width=22, height=22),
-            icon(src="icons/messenger-outline.svg", width=22, height=22),
+            Icon(src="icons/like-outline.svg", width=22, height=22),
+            Icon(src="icons/messenger-outline.svg", width=22, height=22),
          ],
          spacing=15
       )

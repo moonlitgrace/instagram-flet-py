@@ -1,5 +1,5 @@
 import flet as ft
-from utils import image_loader
+from utils import ImageLoader
 
 class StoryView:
    def __init__(self, image: str, username: str) -> None:
@@ -25,7 +25,7 @@ class StoryView:
    def _create_pfp_view(self) -> ft.Container:
       return ft.Container(
          content=ft.Container(
-            content=image_loader(
+            content=ImageLoader(
                src=self.image,
                   width=60,
                   height=60,
@@ -65,7 +65,7 @@ class AddStory:
    def __create_stack(self) -> ft.Stack:
       return ft.Stack(
          [
-            image_loader(
+            ImageLoader(
                src=self.pfp,
                width=60,
                height=60,
