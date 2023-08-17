@@ -6,22 +6,6 @@ class StoryView:
       self.image = image
       self.username = username
 
-   def create_view(self) -> ft.Control:
-      return ft.Container(
-         content=ft.Column(
-            [
-               self._create_pfp_view(),
-               ft.Text(
-                  f"@{self.username}",
-                  size=9.5,
-                  font_family="Roboto-Medium"
-               )
-            ],
-            spacing=3,
-            horizontal_alignment=ft.CrossAxisAlignment.CENTER
-         )
-      )
-
    def _create_pfp_view(self) -> ft.Container:
       return ft.Container(
          content=ft.Container(
@@ -44,23 +28,25 @@ class StoryView:
          padding=2.5
       )
 
+   def create_view(self) -> ft.Control:
+      return ft.Container(
+         content=ft.Column(
+            [
+               self._create_pfp_view(),
+               ft.Text(
+                  f"@{self.username}",
+                  size=9.5,
+                  font_family="Roboto-Medium"
+               )
+            ],
+            spacing=3,
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER
+         )
+      )
+
 class AddStory:
    def __init__(self, pfp: str) -> None:
       self.pfp = pfp
-
-   def create_view(self) -> ft.Column:
-      return ft.Column(
-         [
-            self.__create_stack(),
-            ft.Text(
-               "Your Story",
-               size=9.5,
-               font_family="Roboto-Medium",
-            )
-         ],
-         spacing=5,
-         horizontal_alignment=ft.CrossAxisAlignment.CENTER
-      )
 
    def __create_stack(self) -> ft.Stack:
       return ft.Stack(
@@ -85,4 +71,18 @@ class AddStory:
          ],
          width=60,
          height=60
+      )
+
+   def create_view(self) -> ft.Column:
+      return ft.Column(
+         [
+            self.__create_stack(),
+            ft.Text(
+               "Your Story",
+               size=9.5,
+               font_family="Roboto-Medium",
+            )
+         ],
+         spacing=5,
+         horizontal_alignment=ft.CrossAxisAlignment.CENTER
       )

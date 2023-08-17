@@ -13,21 +13,6 @@ class PostView:
       self.title = title
       self.bg_song = bg_song
 
-   def create_view(self) -> ft.Control:
-      return ft.Container(
-         content=ft.Column([
-            self.__create_header(),
-            ImageLoader(
-               src=self.image,
-               width=self.page.window_width,
-               height=350
-            ),
-            self.__create_options(),
-            self.__create_footer()
-         ],
-         spacing=0),
-      )
-
    def __create_header(self) -> ft.Control:
       return ft.Container(
          content=ft.Row([
@@ -76,4 +61,19 @@ class PostView:
          ],
          spacing=0),
          padding=ft.padding.only(left=10, right=10, bottom=10)
+      )
+      
+   def create_view(self) -> ft.Control:
+      return ft.Container(
+         content=ft.Column([
+            self.__create_header(),
+            ImageLoader(
+               src=self.image,
+               width=self.page.window_width,
+               height=350
+            ),
+            self.__create_options(),
+            self.__create_footer()
+         ],
+         spacing=0),
       )
