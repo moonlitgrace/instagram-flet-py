@@ -7,7 +7,7 @@ class StoryView:
       self.username = username
 
    def _create_pfp_view(self) -> ft.Container:
-      return ft.Container(
+      story_pfp = ft.Container(
          content=ft.Container(
             content=ImageLoader(
                src=self.image,
@@ -27,9 +27,10 @@ class StoryView:
          ),
          padding=2.5
       )
+      return story_pfp
 
    def create_view(self) -> ft.Control:
-      return ft.Container(
+      story = ft.Container(
          content=ft.Column(
             [
                self._create_pfp_view(),
@@ -43,13 +44,14 @@ class StoryView:
             horizontal_alignment=ft.CrossAxisAlignment.CENTER
          )
       )
+      return story
 
 class AddStory:
    def __init__(self, pfp: str) -> None:
       self.pfp = pfp
 
-   def __create_stack(self) -> ft.Stack:
-      return ft.Stack(
+   def __create_stack(self) -> ft.Control:
+      stack = ft.Stack(
          [
             ImageLoader(
                src=self.pfp,
@@ -72,9 +74,10 @@ class AddStory:
          width=60,
          height=60
       )
+      return stack
 
-   def create_view(self) -> ft.Column:
-      return ft.Column(
+   def create_view(self) -> ft.Control:
+      addstory = ft.Column(
          [
             self.__create_stack(),
             ft.Text(
@@ -86,3 +89,4 @@ class AddStory:
          spacing=5,
          horizontal_alignment=ft.CrossAxisAlignment.CENTER
       )
+      return addstory

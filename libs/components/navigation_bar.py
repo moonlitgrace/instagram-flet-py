@@ -10,7 +10,7 @@ class NavigationBar(ft.Container):
 		self.border=ft.border.only(top=ft.BorderSide(1, ft.colors.with_opacity(0.05, ft.colors.BLACK)))
 
 	def __create_navbar(self) -> ft.Control:
-		return ft.Row([
+		navbar = ft.Row([
 			    Icon(src="icons/home.svg", width=22, height=22),
 			    Icon(src="icons/search.svg", width=25, height=25),
 			    Icon(src="icons/add_box.svg", width=25, height=25),
@@ -19,3 +19,4 @@ class NavigationBar(ft.Container):
 			],
 			alignment=ft.MainAxisAlignment.SPACE_AROUND
 		)
+		return navbar
