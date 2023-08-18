@@ -65,7 +65,7 @@ def main(page: ft.Page):
          super(PostsLayoutView, self).__init__(*args, **kwargs)
 
          self._initialize_data()
-         self.controls = [PostView(**data).create_view() for data in self.datas]
+         self.controls = [PostView(**data).build_view() for data in self.datas]
 
       def _initialize_data(self) -> None:
          self.datas = [
