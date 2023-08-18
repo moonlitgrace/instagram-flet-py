@@ -6,7 +6,7 @@ class StoryView:
       self.image = image
       self.username = username
 
-   def _create_pfp_view(self) -> ft.Container:
+   def _build_pfp_view(self) -> ft.Container:
       return ft.Container(
          content=ft.Container(
             content=ImageLoader(
@@ -28,11 +28,11 @@ class StoryView:
          padding=2.5
       )
 
-   def create_view(self) -> ft.Control:
+   def build_view(self) -> ft.Control:
       return ft.Container(
          content=ft.Column(
             [
-               self._create_pfp_view(),
+               self._build_pfp_view(),
                ft.Text(
                   f"@{self.username}",
                   size=9.5,
@@ -48,7 +48,7 @@ class AddStory:
    def __init__(self, pfp: str) -> None:
       self.pfp = pfp
 
-   def __create_stack(self) -> ft.Control:
+   def _build_stack(self) -> ft.Control:
       return ft.Stack(
          [
             ImageLoader(
@@ -73,10 +73,10 @@ class AddStory:
          height=60
       )
 
-   def create_view(self) -> ft.Control:
+   def build_view(self) -> ft.Control:
       return ft.Column(
          [
-            self.__create_stack(),
+            self._build_stack(),
             ft.Text(
                "Your Story",
                size=9.5,

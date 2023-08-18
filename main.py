@@ -43,8 +43,8 @@ def main(page: ft.Page):
             {"image": "images/pfp-4.jpg", "username": "sssuneeth"}
          ]
 
-         self.stories = [StoryView(**data).create_view() for data in self.datas]
-         self.add_story = AddStory(pfp="images/tokito.jpg").create_view()
+         self.stories = [StoryView(**data).build_view() for data in self.datas]
+         self.add_story = AddStory(pfp="images/tokito.jpg").build_view()
 
       def _create_view(self) -> ft.Control:
          return ft.Row(
