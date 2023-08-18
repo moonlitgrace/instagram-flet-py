@@ -11,14 +11,19 @@ To set up the project, you'll need [Poetry](https://python-poetry.org/) installe
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/instagram-app.git
-   cd instagram-app
+   git clone https://github.com/tokitou-san/Finstagram.git
+   cd Finstagram
    ```
-2. Install project dependencies using Poetry:
+2. Create a virtual environment (optional but recommended):
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows: .\venv\Scripts\activate
+   ```
+3. Install project dependencies using Poetry:
    ```bash
    poetry install
    ```
-3. Run the application:
+4. Run the application:
    ```bash
    poetry run python main.py
    ```
