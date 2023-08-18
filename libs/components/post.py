@@ -14,7 +14,7 @@ class PostView:
       self.bg_song = bg_song
 
    def __create_header(self) -> ft.Control:
-      post_header = ft.Container(
+      return ft.Container(
          content=ft.Row([
             ft.Row([
                ImageLoader(
@@ -34,10 +34,9 @@ class PostView:
          alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
          padding=ft.padding.only(left=10, top=10, bottom=10, right=2)
       )
-      return post_header
 
    def __create_options(self) -> ft.Control:
-      post_options = ft.Container(
+      return ft.Container(
          content=ft.Row([
             ft.Row([
                Icon(src="icons/like-outline.svg", width=22, height=22),
@@ -49,10 +48,9 @@ class PostView:
          alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
          padding=ft.padding.symmetric(vertical=7, horizontal=10)
       )
-      return post_options
 
    def __create_footer(self) -> ft.Control:
-      post_footer = ft.Container(
+      return ft.Container(
          content=ft.Column([
             ft.Text(f"{self.likes} Likes", font_family="Roboto-Medium", size=11),
             ft.Row([
@@ -64,10 +62,9 @@ class PostView:
          spacing=0),
          padding=ft.padding.only(left=10, right=10, bottom=10)
       )
-      return post_footer
       
    def create_view(self) -> ft.Control:
-      post = ft.Container(
+      return ft.Container(
          content=ft.Column([
             self.__create_header(),
             ImageLoader(
@@ -80,4 +77,3 @@ class PostView:
          ],
          spacing=0),
       )
-      return post
