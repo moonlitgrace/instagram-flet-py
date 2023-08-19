@@ -1,9 +1,13 @@
 # Finstagram
 
 An Instagram UI clone built using Flet and Python.
+> Currently under development
 ## Description
 
 This project is a UI clone of Instagram, developed using the Flet framework and Python. It aims to replicate the user interface and basic functionality of the Instagram app.
+
+[See demo 1](https://github.com/tokitou-san/Finstagram/assets/114811070/bc3cebda-548f-43fc-af69-f2d7823375de)
+[See demo 2](https://github.com/tokitou-san/Finstagram/assets/114811070/72917aeb-fdec-4719-8254-d788973f7c3c)
 
 ## Installation and Setup
 
