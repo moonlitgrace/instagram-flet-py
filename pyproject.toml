@@ -9,7 +9,7 @@ packages = [{include = "instagram_app"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-anyio = "3.7.1"
+anyio = "4.0.0"
 certifi = "2023.7.22"
 colorama = "0.4.6"
 copier = "8.1.0"
