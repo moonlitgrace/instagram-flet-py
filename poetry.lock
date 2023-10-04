@@ -143,13 +143,13 @@ files = [
 
 [[package]]
 name = "dunamai"
-version = "1.18.1"
+version = "1.19.0"
 description = "Dynamic version generation"
 optional = false
 python-versions = ">=3.5,<4.0"
 files = [
-    {file = "dunamai-1.18.1-py3-none-any.whl", hash = "sha256:ee7b042f7a687fa04fc383258eb93bd819c7bd8aec62e0974f3c69747e5958f2"},
-    {file = "dunamai-1.18.1.tar.gz", hash = "sha256:5e9a91e43d16bb56fa8fcddcf92fa31b2e1126e060c3dcc8d094d9b508061f9d"},
+    {file = "dunamai-1.19.0-py3-none-any.whl", hash = "sha256:1ed948676bbf0812bfaafe315a134634f8d6eb67138513c75aa66e747404b9c6"},
+    {file = "dunamai-1.19.0.tar.gz", hash = "sha256:6ad99ae34f7cd290550a2ef1305d2e0292e6e6b5b1b830dfc07ceb7fd35fec09"},
 ]
 
 [package.dependencies]
@@ -928,4 +928,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "05e6d910067e94b2d209c2e7254065ea45e2353c07428956989ded489df6e47e"
+content-hash = "593978662909a2eca72bfe65b9739c80c27273e6db5cd49605860af909a999a5"
