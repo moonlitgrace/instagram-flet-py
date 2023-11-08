@@ -47,7 +47,7 @@ watchdog = "3.0.0"
 wcwidth = "0.2.9"
 websocket-client = "1.6.4"
 websockets = "11.0.3"
-black = "^23.10.1"
+black = "^23.11.0"
 
 
 [build-system]
