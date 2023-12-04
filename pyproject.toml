@@ -45,7 +45,7 @@ sniffio = "1.3.0"
 typing-extensions = "4.8.0"
 watchdog = "3.0.0"
 wcwidth = "0.2.12"
-websocket-client = "1.6.4"
+websocket-client = "1.7.0"
 websockets = "11.0.3"
 black = "^23.11.0"
 
