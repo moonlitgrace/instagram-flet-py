@@ -1,12 +1,13 @@
 from typing import List
+
 import flet as ft
-from utils import ImageLoader
 
 # Components
 from libs.components.appbar import Appbar
-from libs.components.story import StoryView, AddStory
-from libs.components.post import PostView
 from libs.components.navigation_bar import NavigationBar
+from libs.components.post import PostView
+from libs.components.story import AddStory, StoryView
+from utils import ImageLoader
 
 
 def main(page: ft.Page):
@@ -105,8 +106,7 @@ def main(page: ft.Page):
     page.update()
 
 
-if __name__ == "__main__":
-    ft.app(
-        target=main,
-        assets_dir="assets",
-    )
+ft.app(
+    target=main,
+    assets_dir="assets",
+)
