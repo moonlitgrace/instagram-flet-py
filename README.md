@@ -8,8 +8,6 @@ This project is a UI clone of Instagram, developed using the Flet framework and 
    <img width="49%" src="https://github.com/tokitou-san/Finstagram/assets/114811070/bc3cebda-548f-43fc-af69-f2d7823375de" />
    <img width="49%" src="https://github.com/tokitou-san/Finstagram/assets/114811070/72917aeb-fdec-4719-8254-d788973f7c3c" />
 </p>
-[See demo 1](https://github.com/tokitou-san/Finstagram/assets/114811070/bc3cebda-548f-43fc-af69-f2d7823375de)
-[See demo 2](https://github.com/tokitou-san/Finstagram/assets/114811070/72917aeb-fdec-4719-8254-d788973f7c3c)
 
 ## Installation and Setup
 
