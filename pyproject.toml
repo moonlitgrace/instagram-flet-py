@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "instagram-app"
+name = "instagram-flet-py"
 version = "0.1.0"
-description = "An Instagram UI clone made with Flet and Python"
+description = "This project is a UI clone of Instagram developed using the Flet framework and Python."
 authors = ["tokitou-san <tokitousan2005@gmail.com>"]
 license = "AGPL-3.0"
 readme = "README.md"
