@@ -9,7 +9,7 @@ packages = [{include = "libs"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-flet = "^0.23.1"
+flet = "^0.23.2"
 
 
 [build-system]
